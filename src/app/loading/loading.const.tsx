@@ -5,7 +5,7 @@ import HuntLogo from '/public/crytek-assets/Logo/Hunt_Logo_Textured_White.png'
 
 export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
   (
-    <div>
+    <div key={'1'}>
       <p>© 2024 Crytek GmbH. All right reserved.</p>
       <p>Crytek, CRYENGINE, Hunt Showdown and the respective logos are trademarks or registered trademarks of the Crytek
         group in the EU, U.S. and/or other territories.</p>
@@ -13,34 +13,34 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
     </div>
   ),
   (
-    <div>
+    <div key={'2'}>
       <h3 className={'text-5xl mb-4'}>Photosensitive seizure warning</h3>
       <p>
         A very small percentage of people may experience a seizure when exposed to certain visual images, including flashing
         lights or patterns that may appear in video games. Even people who have no history of seizures or epilepsy may have
-        an undiagnosed condition that can cause these "photosensitive epileptic seizures" while playing video games.
+        an undiagnosed condition that can cause these «photosensitive epileptic seizures» while playing video games.
       </p>
       <p className={'font-bold mt-4'}>Immediately stop playing and consult a doctor if you experience any symptoms.</p>
     </div>
   ),
   (
-    <div className={'flex flex-col items-center gap-4'}>
+    <div key={'3'} className={'flex flex-col items-center gap-4'}>
       <img src={HuntHeadphones.src} />
       <p>HUNT is best experienced in Stereo with Headphones for full 3D binaural Audio.</p>
     </div>
   ),
   (
-    <div>
+    <div key={'4'}>
       <img src={CrytekLogo.src} />
     </div>
   ),
   (
-    <div>
+    <div key={'5'}>
       <img src={CryengineLogo.src} />
     </div>
   ),
   (
-    <div>
+    <div key={'6'}>
       <p>
         Hunt: Showdown © 2024 CRYTEK GMBH. Crytek, CRYENGINE, Hunt: Showdown and the respective logos are trademarks or registered trademarks of the Crytek
         group in the EU, U.S. and/or other territories. All other trademarks are the property of their respective owners.
@@ -53,7 +53,7 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
     </div>
   ),
   (
-    <div>
+    <div key={'7'}>
       <p>
         As creators, we are part of an ongoing dialogue with our players, and we strive to make the experience of Hunt immersive,
         entertaining, and inclusive  to anyone who wishes to join us.
@@ -64,7 +64,7 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
     </div>
   ),
   (
-    <div className={'w-[650px]'}>
+    <div key={'8'} className={'w-[650px]'}>
       <img src={HuntLogo.src} />
     </div>
   )

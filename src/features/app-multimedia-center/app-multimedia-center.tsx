@@ -3,8 +3,8 @@ import {getRandomInt} from "@/utils/get-random-int";
 
 export class AppMultimediaCenter {
   static preset = MusicPreset.VOCAL;
-  static currentLoopTracks = [];
-  static currentAudio = null as HTMLAudioElement;
+  static currentLoopTracks = [] as string[];
+  static currentAudio = null as unknown as HTMLAudioElement;
 
   static setMusicPreset = (preset: MusicPreset) => {
     AppMultimediaCenter.preset = preset;
@@ -13,7 +13,7 @@ export class AppMultimediaCenter {
 
   static startPresetLoop = () => {
     const musicConfig = MUSIC_PRESET_CONFIG.find(c => c.preset === AppMultimediaCenter.preset);
-    AppMultimediaCenter.currentLoopTracks = [...musicConfig.soundtrackSrc];
+    AppMultimediaCenter.currentLoopTracks = [...musicConfig!.soundtrackSrc];
 
     const playLoopRecursive = () => {
       if (!AppMultimediaCenter.currentAudio) {

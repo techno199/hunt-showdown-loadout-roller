@@ -17,7 +17,7 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
           </div>
           <div className={'flex gap-2'}>
             {[1,2,3].map(i => (
-              <div key={i} className={clsx('w-3 h-3 border border-col-2', {['bg-white']: i <= weaponSlot?.weapon.slotSize})} />
+              <div key={i} className={clsx('w-3 h-3 border border-col-2', {['bg-white']: i <= (weaponSlot?.weapon.slotSize || 0)})} />
             ))}
           </div>
         </div>

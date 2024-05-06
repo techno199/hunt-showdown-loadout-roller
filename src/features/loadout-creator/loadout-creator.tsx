@@ -13,7 +13,7 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   const [state, setState] = useState({
     loadoutsInitialized: false,
     huntersLoadouts: [] as HunterLoadout[],
-    selectedLoadout: null as HunterLoadout
+    selectedLoadout: null as unknown as HunterLoadout
   });
 
   const {huntersLoadouts, selectedLoadout, loadoutsInitialized} = state;
@@ -21,7 +21,7 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   const secondWeaponSlot = selectedLoadout?.weaponSlots?.[1];
 
   useEffect(() => {
-    const huntersLoadouts = JSON.parse(localStorage.getItem('loadouts'));
+    const huntersLoadouts = JSON.parse(localStorage.getItem('loadouts') as string);
     const selectedLoadout = huntersLoadouts[0];
     setState({...state, huntersLoadouts, selectedLoadout, loadoutsInitialized: true});
   }, [])
@@ -51,7 +51,7 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
     setState({
       ...state,
       huntersLoadouts: newLoadouts,
-      selectedLoadout: newLoadouts.at(-1)
+      selectedLoadout: newLoadouts.at(-1) as HunterLoadout
     })
   }
 

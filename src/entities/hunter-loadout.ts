@@ -20,8 +20,8 @@ export class HunterLoadout implements THunterLoadout {
   id: string;
   hunterName: string;
   weaponSlots: TWeaponSlot[] = [];
-  toolsSlots: TToolSlot[];
-  consumableSlots: TConsumableSlot[];
+  toolsSlots: TToolSlot[] = [];
+  consumableSlots: TConsumableSlot[] = [];
 
   constructor() {
     this.id = crypto.randomUUID();

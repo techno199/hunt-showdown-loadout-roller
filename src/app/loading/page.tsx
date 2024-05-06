@@ -4,7 +4,7 @@ import {
   LOADING_PAGE_BACKEND_CONNECTION_STAGES,
   LOADING_PAGE_COPYRIGHT_PARAGRAPH_TRANSITION_THRESHOLDS,
   LOADING_PAGE_COPYRIGHT_PARAGRAPHS
-} from "@/app/loading/loading.cont";
+} from "@/app/loading/loading.const";
 import {AnimatePresence, motion} from "framer-motion";
 import CircleButton from '/public/crytek-assets/button.svg';
 import {useRouter} from "next/navigation";
@@ -127,6 +127,6 @@ const Page = (props: PageProps) => {
 
 export default Page;
 
-const MotionComponent = (props) => (
+const MotionComponent = (props: any) => (
   <motion.div transition={{duration: 1}} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} {...props} />
 )
