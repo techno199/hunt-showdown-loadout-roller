@@ -17,17 +17,17 @@ const HunterLoadoutDetails = (props: HunterLoadoutDetailsProps) => {
       <WeaponSlot weaponSlot={selectedLoadout?.weaponSlots?.[1]} />
 
       <div className={'grid grid-cols-4 gap-4'}>
-        <div className={'border border-col-4 h-[120px]'}></div>
-        <div className={'border border-col-4 h-[120px]'}></div>
-        <div className={'border border-col-4 h-[120px]'}></div>
-        <div className={'border border-col-4 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
       </div>
 
       <div className={'grid grid-cols-4 gap-4'}>
-        <div className={'border border-col-4 h-[120px]'}></div>
-        <div className={'border border-col-4 h-[120px]'}></div>
-        <div className={'border border-col-4 h-[120px]'}></div>
-        <div className={'border border-col-4 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
+        <div className={'border border-col-2/50 h-[120px]'}></div>
       </div>
 
       {selectedLoadout && (

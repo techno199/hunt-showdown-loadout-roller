@@ -20,7 +20,7 @@ const Button = (props: ButtonProps) => {
         ['after:!-translate-x-[60%] after:!-translate-y-1/2 after:!opacity-50 !text-col-5']: variant === 'stroke' && selected,
         ['pointer-events-none !text-col-1']: variant === 'stroke' && disabled,
         // Flat
-        ['p-2 border-2 border-col-2 rounded bg-col-4 hover:bg-col-1 text-white']: variant === 'flat',
+        ['p-2 border-2 border-col-2/50 rounded bg-col-4 hover:bg-col-1 text-white']: variant === 'flat',
         ['!bg-col-1/100']: variant === 'flat' && selected,
         ['text-white/40 pointer-events-none']: variant === 'flat' && disabled,
       })}

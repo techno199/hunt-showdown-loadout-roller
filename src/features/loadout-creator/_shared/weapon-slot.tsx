@@ -12,7 +12,7 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
   return (
     <div className={'flex gap-2 h-[120px]'}>
       {Array(weaponSlot?.dualWielding ? 2 : 1).fill(0).map((_, i) => (
-        <div key={i} className={'flex flex-col border-2 border-col-2 rounded p-2.5 grow'}>
+        <div key={i} className={'flex flex-col border-2 border-col-2/50 rounded p-2.5 grow'}>
           <div className={'flex items-center justify-between grow'}>
             <span>{weaponSlot?.weapon.name}</span>
           </div>
