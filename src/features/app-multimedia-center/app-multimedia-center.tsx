@@ -23,7 +23,7 @@ export class AppMultimediaCenter {
           AppMultimediaCenter.currentLoopTracks = AppMultimediaCenter.currentLoopTracks.filter(t => t !== nextTrackSrc);
           const track = new Audio(nextTrackSrc);
           AppMultimediaCenter.currentAudio = track;
-          track.volume = 0.15;
+          track.volume = 0.05;
           track.play();
           track.onended = () => {
             playLoopRecursive();
@@ -42,5 +42,6 @@ export class AppMultimediaCenter {
 
   static stopCurrentLoop = () => {
     AppMultimediaCenter.currentAudio?.pause();
+    AppMultimediaCenter.currentAudio = null!;
   }
 }
