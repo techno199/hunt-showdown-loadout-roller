@@ -17,7 +17,7 @@ const vocalSrc = [
   '/crytek-assets/soundtrack/Bullets Lullaby Vocal.mp3',
   '/crytek-assets/soundtrack/Devil in the Churchyard Vocal.mp3',
   '/crytek-assets/soundtrack/End Will Come Vocal.mp3',
-  '/crytek-assets/soundtrack/Rise up Dead Man Vocal 1.mp3',
+  '/crytek-assets/soundtrack/Rise up Dead Man Vocal.mp3',
   '/crytek-assets/soundtrack/Sinners Blues Vocal.mp3'
 ]
 

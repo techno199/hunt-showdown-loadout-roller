@@ -18,12 +18,12 @@ export class AppMultimediaCenter {
     const playLoopRecursive = () => {
       if (!AppMultimediaCenter.currentAudio) {
         if (AppMultimediaCenter.currentLoopTracks.length > 0) {
-          const nextLoopTrackIndex = getRandomInt(0, AppMultimediaCenter.currentLoopTracks.length);
+          const nextLoopTrackIndex = getRandomInt(0, AppMultimediaCenter.currentLoopTracks.length -1);
           const nextTrackSrc = AppMultimediaCenter.currentLoopTracks[nextLoopTrackIndex];
           AppMultimediaCenter.currentLoopTracks = AppMultimediaCenter.currentLoopTracks.filter(t => t !== nextTrackSrc);
           const track = new Audio(nextTrackSrc);
           AppMultimediaCenter.currentAudio = track;
-          track.volume = 0.1;
+          track.volume = 0.15;
           track.play();
           track.onended = () => {
             playLoopRecursive();
