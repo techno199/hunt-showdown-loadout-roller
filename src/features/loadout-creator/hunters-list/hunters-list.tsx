@@ -37,8 +37,8 @@ const HuntersList = (props: HuntersListProps) => {
       </div>
 
       <div className={'flex gap-2'}>
-        <Button variant={'flat'} className={'text-left w-full'} onClick={onGenerateClick}>+ Generate Hunter</Button>
-        <Button variant={'flat'} className={'text-left w-full'} disabled={!hunterLoadouts.length} onClick={onDismissAll}>Dismiss All</Button>
+        <Button variant={'flat'} className={'text-left w-full'} onClick={onGenerateClick}>+ Create New</Button>
+        <Button variant={'flat'} className={'text-left w-full'} disabled={!hunterLoadouts.length} onClick={onDismissAll}>Dismiss Everyone</Button>
       </div>
     </div>
   );
