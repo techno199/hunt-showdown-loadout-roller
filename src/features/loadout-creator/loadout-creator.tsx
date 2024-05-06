@@ -21,8 +21,8 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   const secondWeaponSlot = selectedLoadout?.weaponSlots?.[1];
 
   useEffect(() => {
-    const huntersLoadouts = JSON.parse(localStorage.getItem('loadouts') as string);
-    const selectedLoadout = huntersLoadouts[0];
+    const huntersLoadouts = JSON.parse(localStorage.getItem('loadouts') as string) || [];
+    const selectedLoadout = huntersLoadouts?.[0];
     setState({...state, huntersLoadouts, selectedLoadout, loadoutsInitialized: true});
   }, [])
 
