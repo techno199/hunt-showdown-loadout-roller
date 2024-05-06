@@ -1,0 +1,13 @@
+export enum AmmoModifier {
+  DRAGON_BREATH,
+  FLECHETTE,
+  PENNY_SHOT,
+  SLUG,
+  DUMDUM,
+  FMJ,
+  INCENDIARY,
+  SPITZER,
+  HIGH_VELOCITY,
+  POISON,
+  STARSHELL
+}
