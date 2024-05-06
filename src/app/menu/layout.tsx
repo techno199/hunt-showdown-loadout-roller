@@ -15,6 +15,7 @@ const MenuLayout = (props: any) => {
 
   const handleExit = () => {
     router.push('/');
+    AppMultimediaCenter.stopCurrentLoop();
   }
 
   return (

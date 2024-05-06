@@ -39,4 +39,8 @@ export class AppMultimediaCenter {
 
     playLoopRecursive();
   }
+
+  static stopCurrentLoop = () => {
+    AppMultimediaCenter.currentAudio?.pause();
+  }
 }

@@ -2,6 +2,7 @@ import HuntHeadphones from '/public/crytek-assets/hunt_headphones.png';
 import CrytekLogo from '/public/crytek-assets/crytek_logo.png';
 import CryengineLogo from '/public/crytek-assets/cryengine_logo.png';
 import HuntLogo from '/public/crytek-assets/Logo/Hunt_Logo_Textured_White.png'
+import Image from "next/image";
 
 export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
   (
@@ -25,18 +26,18 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
   ),
   (
     <div key={'3'} className={'flex flex-col items-center gap-4'}>
-      <img src={HuntHeadphones.src} />
+      <Image src={HuntHeadphones} />
       <p>HUNT is best experienced in Stereo with Headphones for full 3D binaural Audio.</p>
     </div>
   ),
   (
     <div key={'4'}>
-      <img src={CrytekLogo.src} />
+      <Image src={CrytekLogo} />
     </div>
   ),
   (
     <div key={'5'}>
-      <img src={CryengineLogo.src} />
+      <Image src={CryengineLogo} />
     </div>
   ),
   (
@@ -65,7 +66,7 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
   ),
   (
     <div key={'8'} className={'w-[650px]'}>
-      <img src={HuntLogo.src} />
+      <Image src={HuntLogo} />
     </div>
   )
 ];

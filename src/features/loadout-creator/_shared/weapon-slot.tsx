@@ -2,6 +2,7 @@ import React from 'react';
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import DualWield from "/public/crytek-assets/dual_wield.png";
 import clsx from "clsx";
+import Image from "next/image";
 
 export type WeaponSlotProps = {}
 
@@ -25,7 +26,7 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
 
       {weaponSlot?.dualWielding && (
         <div className={'flex flex-col justify-center  border-2 border-col-2 rounded'}>
-          <img src={DualWield.src} />
+          <Image src={DualWield} />
         </div>
       )}
     </div>

@@ -8,6 +8,7 @@ import {
 import {AnimatePresence, motion} from "framer-motion";
 import CircleButton from '/public/crytek-assets/button.svg';
 import {useRouter} from "next/navigation";
+import Image from "next/image";
 
 export type PageProps = {}
 
@@ -115,7 +116,7 @@ const Page = (props: PageProps) => {
           )}
           {currentCopyrightParagraphIndex === 8 && currentConnectivityParagraphIndex + 1 < LOADING_PAGE_BACKEND_CONNECTION_STAGES.length && (
             <MotionComponent className={'flex flex-col items-center gap-10 text-2xl'} transition={{duration: 2}}>
-              <img src={CircleButton.src} className={'w-[200px] h-[200px] animate-spin'} style={{animationDuration: '15s'}} />
+              <Image src={CircleButton} className={'w-[200px] h-[200px] animate-spin'} style={{animationDuration: '15s'}} />
               <span className={'opacity-30'}>{LOADING_PAGE_BACKEND_CONNECTION_STAGES[currentConnectivityParagraphIndex]}</span>
             </MotionComponent>
           )}
