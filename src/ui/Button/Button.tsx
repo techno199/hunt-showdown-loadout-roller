@@ -16,6 +16,8 @@ const Button = (props: ButtonProps) => {
   const handleClick = (e: any) => {
     onClick?.(e);
 
+    if (selected) return;
+
     let src, currentTime = 0;
     switch (sfx) {
       case 'click1':
@@ -30,9 +32,11 @@ const Button = (props: ButtonProps) => {
         src = '/crytek-assets/sfx/hunt_sfx_cancel.mp3';
         break;
       case 'recruitHunter1':
+        currentTime = 0.24;
         src = '/crytek-assets/sfx/hunt_sfx_recruithunter1.mp3';
         break;
       case 'selectHunter1':
+        currentTime = 0.2;
         src = '/crytek-assets/sfx/hunt_sfx_selecthunter1.mp3'
     }
 
