@@ -11,7 +11,6 @@ export type HunterLoadoutDetailsProps = {
 
 const HunterLoadoutDetails = (props: HunterLoadoutDetailsProps) => {
   const {selectedLoadout, onDismiss, ...rest} = props;
-  console.log(selectedLoadout);
 
   return (
     <div className={'flex flex-col gap-4'}>

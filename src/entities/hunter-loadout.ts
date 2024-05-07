@@ -5,8 +5,9 @@ import {names, uniqueNamesGenerator} from "unique-names-generator";
 import {WEAPONS_CONFIG} from "@/weapons.config";
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import {getRandomInt} from "@/utils/get-random-int";
-import {TOOLS_CONFIG} from "@/tools.config";
+import {DEFAULT_TOOLS_PRESET, TOOLS_CONFIG} from "@/tools.config";
 import {CONSUMABLES_CONFIG} from "@/consumables.config";
+import {getRandomWeightedItem} from "@/utils/get-random-weighted-item";
 
 const HUNTER_BASE_MAX_SLOTS = 4;
 
@@ -56,10 +57,13 @@ export class HunterLoadout implements THunterLoadout {
 
     // Tools roll
     let toolsPool = [...TOOLS_CONFIG];
-    const toolsQuantity = getRandomInt(3, 4);
-    for (let i=0; i<toolsQuantity; i++) {
-      const nextToolIndex = getRandomInt(0, toolsPool.length - 1);
+    const toolsCount = getRandomInt(3, 4);
+    for (let i=0; i<toolsCount; i++) {
+      const presetItems = DEFAULT_TOOLS_PRESET[i];
+      const nextToolPresetItem: any = getRandomWeightedItem(presetItems || toolsPool as any);
+      const nextToolIndex = toolsPool.findIndex(t => t.name === nextToolPresetItem.name);
       const nextTool = toolsPool[nextToolIndex];
+
       toolsPool.splice(nextToolIndex, 1);
       this.toolsSlots.push(nextTool);
     }

@@ -28,6 +28,10 @@ export const TOOLS_CONFIG = [
     src: '/crytek-assets/tools/tool_electriclamp.png'
   },
   {
+    name: 'Knife',
+    src: '/crytek-assets/tools/tool_knife.png'
+  },
+  {
     name: 'Knuckle Knife',
     src: '/crytek-assets/tools/tool_knuckleknife.png'
   },
@@ -75,4 +79,13 @@ export const TOOLS_CONFIG = [
     name: 'Decoy Fuses',
     src: '/crytek-assets/tools/tool_decoyfuses.png'
   }
+];
+
+export const DEFAULT_TOOLS_PRESET = [
+  [{name: 'First Aid Kit', weight: 1}],
+  [{name: 'Knife', weight: 100}, {name: 'Heavy Knife', weight: 100}, {name: 'Dusters', weight: 100}, {name: 'Throwing Axes', weight: 20}, {name: 'Throwing Knives', weight: 20}],
+  [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|dusters|aid/)?.length)],
+  [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|dusters|aid/)?.length)]
 ]
+
+console.log(DEFAULT_TOOLS_PRESET)
