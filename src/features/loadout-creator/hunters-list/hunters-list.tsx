@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {motion} from "framer-motion";
 import Button from "@/ui/Button/Button";
 import {THunterLoadout} from "@/entities/hunter-loadout";
@@ -17,9 +17,16 @@ export type HuntersListProps = {
 const HuntersList = (props: HuntersListProps) => {
   const { hunterLoadouts, selectedLoadout, onLoadoutClick, onGenerateClick, onDismissAll, ...rest } = props;
 
+  const scrollableRef = useRef(null as HTMLDivElement);
+
+  const handleGenerateClick = () => {
+    onGenerateClick();
+    setTimeout(() => scrollableRef.current?.scrollTo(0, scrollableRef.current.scrollHeight), 10);
+  }
+
   return (
     <div className={'flex flex-col gap-4'}>
-      <div className={'flex flex-col gap-4 basis-0 grow overflow-auto'}>
+      <div className={'flex flex-col gap-4 basis-0 grow overflow-auto'} ref={scrollableRef}>
         {hunterLoadouts.map(loadout => (
           <motion.div
             key={loadout.id}
@@ -40,11 +47,25 @@ const HuntersList = (props: HuntersListProps) => {
             </Button>
           </motion.div>
         ))}
+
+        <Button
+          variant={'flat'}
+          className={'flex items-center w-full text-left uppercase !bg-col-7/20 hover:!bg-col-8/80 animate-glow'}
+          onClick={handleGenerateClick}
+        >
+          Recruit Hunter
+        </Button>
       </div>
 
       <div className={'flex gap-2'}>
-        <Button variant={'flat'} className={'text-left w-full'} onClick={onGenerateClick}>+ Create New</Button>
-        <Button variant={'flat'} className={'text-left w-full'} disabled={!hunterLoadouts.length} onClick={onDismissAll}>Dismiss Everyone</Button>
+        <Button
+          variant={'flat'}
+          className={'text-left w-full uppercase !bg-col-5/30 hover:shadow-[0_0px_25px_-5px_rgb(215_38_61)]'}
+          disabled={!hunterLoadouts.length}
+          onClick={onDismissAll}
+        >
+          Dismiss Everyone
+        </Button>
       </div>
     </div>
   );
