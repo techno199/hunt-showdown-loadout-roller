@@ -586,48 +586,48 @@ export const WEAPONS_CONFIG: TWeapon[] = [
   {
     name: 'Bomb Lance',
     slotSize: 3,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.PROTOTYPE,
   },
   {
     name: 'Dolch 96',
     slotSize: 1,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.PROTOTYPE,
     dualWieldingAvailable: true
   },
   {
     name: 'Dolch 96 Claw',
     slotSize: 1,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.PROTOTYPE,
     dualWieldingAvailable: true
   },
   {
     name: 'Dolch 96 Deadeye',
     slotSize: 1,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.PROTOTYPE,
   },
   {
     name: 'Dolch 96 Precision',
     slotSize: 2,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.PROTOTYPE,
   },
   {
     name: 'Crossbow',
     slotSize: 3,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.CROSSBOW,
   },
   {
     name: 'Hand Crossbow',
     slotSize: 1,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.CROSSBOW,
   },
   {
     name: 'Hunting Bow',
     slotSize: 2,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.CROSSBOW,
   },
   {
     name: 'Nitro Express Rifle',
     slotSize: 3,
-    ammoType: AmmoType.SPECIAL,
+    ammoType: AmmoType.NITRO_EXPRESS,
   }
 ]

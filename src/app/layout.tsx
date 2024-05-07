@@ -24,7 +24,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </Head>
-      <body className={'flex flex-col min-h-screen'}>
+      <body className={'flex flex-col min-h-screen text-col-2'}>
         {children}
       </body>
     </html>

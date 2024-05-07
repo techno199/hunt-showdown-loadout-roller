@@ -15,7 +15,8 @@ const config: Config = {
         'col-2': 'rgb(171 171 171)',
         'col-3': 'rgb(133 133 133)',
         'col-4': 'rgb(27 27 27)',
-        'col-5': 'rgb(215 38 61)'
+        'col-5': 'rgb(215 38 61)',
+        'col-6': 'rgb(59 61 62)'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -2,6 +2,9 @@ import React from 'react';
 import {motion} from "framer-motion";
 import Button from "@/ui/Button/Button";
 import {THunterLoadout} from "@/entities/hunter-loadout";
+import {TWeaponSlot} from "@/entities/weapon-slot";
+import DualWield from "/public/crytek-assets/dual_wield.png";
+import Image from "next/image";
 
 export type HuntersListProps = {
   hunterLoadouts: THunterLoadout[];
@@ -26,11 +29,14 @@ const HuntersList = (props: HuntersListProps) => {
           >
             <Button
               variant={'flat'}
-              className={'w-full text-left'}
+              className={'flex items-center w-full text-left'}
               selected={selectedLoadout?.id === loadout.id}
               onClick={onLoadoutClick(loadout)}
             >
               {loadout.hunterName}
+              {loadout.weaponSlots!?.find((s: TWeaponSlot) => s.dualWielding) && (
+                <Image src={DualWield} className={'h-[26px] w-auto'} />
+              )}
             </Button>
           </motion.div>
         ))}

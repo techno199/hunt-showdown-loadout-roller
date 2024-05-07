@@ -3,5 +3,7 @@ export enum AmmoType {
   MEDIUM,
   LARGE,
   SHELL,
-  SPECIAL
+  PROTOTYPE,
+  CROSSBOW,
+  NITRO_EXPRESS
 }

@@ -68,7 +68,7 @@ const Page = (props: PageProps) => {
 
   return (
     <motion.div
-      className={'flex flex-col items-center justify-center text-center bg-black grow text-white text-3xl'}
+      className={'flex flex-col items-center justify-center text-center bg-black grow text-col-2 text-3xl'}
       initial={{opacity: 1}}
       exit={{opacity: 0}}
     >

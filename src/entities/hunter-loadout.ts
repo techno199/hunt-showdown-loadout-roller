@@ -5,6 +5,8 @@ import {names, uniqueNamesGenerator} from "unique-names-generator";
 import {WEAPONS_CONFIG} from "@/weapons.config";
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import {getRandomInt} from "@/utils/get-random-int";
+import {TOOLS_CONFIG} from "@/tools.config";
+import {CONSUMABLES_CONFIG} from "@/consumables.config";
 
 const HUNTER_BASE_MAX_SLOTS = 4;
 
@@ -31,6 +33,7 @@ export class HunterLoadout implements THunterLoadout {
       separator: ' '
     });
 
+    // First weapon roll
     const firstWeaponPool = WEAPONS_CONFIG.filter(w => w.slotSize > 1 || w.dualWieldingAvailable);
     const firstWeapon: TWeapon = firstWeaponPool[getRandomInt(1, firstWeaponPool.length) - 1];
     const firstWeaponSlot: TWeaponSlot = {
@@ -39,6 +42,7 @@ export class HunterLoadout implements THunterLoadout {
     }
     const firstWeaponSlotSize = firstWeapon.dualWieldingAvailable ? 2 : 3;
 
+    // Second weapon roll
     const secondWeaponAvailableSize = HUNTER_BASE_MAX_SLOTS - firstWeaponSlotSize;
     const secondWeaponPool = WEAPONS_CONFIG.filter(w => w.slotSize <= secondWeaponAvailableSize);
     const secondWeapon = secondWeaponPool[getRandomInt(1, secondWeaponPool.length) - 1];
@@ -49,6 +53,26 @@ export class HunterLoadout implements THunterLoadout {
 
     this.weaponSlots[0] = firstWeaponSlot;
     this.weaponSlots[1] = secondWeaponSlot;
+
+    // Tools roll
+    let toolsPool = [...TOOLS_CONFIG];
+    const toolsQuantity = getRandomInt(3, 4);
+    for (let i=0; i<toolsQuantity; i++) {
+      const nextToolIndex = getRandomInt(0, toolsPool.length - 1);
+      const nextTool = toolsPool[nextToolIndex];
+      toolsPool.splice(nextToolIndex, 1);
+      this.toolsSlots.push(nextTool);
+    }
+
+    // Consumables roll
+    let consumablesPool = [...CONSUMABLES_CONFIG];
+    const consumablesQuantity = getRandomInt(3, 4);
+    for (let i=0; i<consumablesQuantity; i++) {
+      const nextConsumableIndex = getRandomInt(0, consumablesPool.length - 1);
+      const nextTool = consumablesPool[nextConsumableIndex];
+      consumablesPool.splice(nextConsumableIndex, 1);
+      this.consumableSlots.push(nextTool);
+    }
   }
 
   toString() {
