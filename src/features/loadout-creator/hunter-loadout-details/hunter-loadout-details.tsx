@@ -22,7 +22,7 @@ const HunterLoadoutDetails = (props: HunterLoadoutDetailsProps) => {
 
           return (
             <div key={tool?.name}
-                 className={'flex items-end justify-center p-1.5 text-center border border-col-2/50 h-[120px]'}>
+                 className={'flex items-end justify-center p-1.5 text-center border border-col-2/50 bg-col-6 h-[120px]'}>
               <span className={'text-sm'}>{tool?.name}</span>
             </div>
           )
@@ -35,7 +35,7 @@ const HunterLoadoutDetails = (props: HunterLoadoutDetailsProps) => {
 
           return (
             <div key={consumable?.name}
-                 className={'flex items-end justify-center p-1.5 text-center border border-col-2/50 h-[120px]'}>
+                 className={'flex items-end justify-center p-1.5 text-center border border-col-2/50 bg-col-6 h-[120px]'}>
               <span className={'text-sm'}>{consumable?.name}</span>
             </div>
           )
