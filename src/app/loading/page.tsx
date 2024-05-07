@@ -78,7 +78,7 @@ const Page = (props: PageProps) => {
 
   useEffect(() => {
     const listener = (e) => {
-      if (e.key === 'f') {
+      if (e.which === 70) {
         setState(p => {
           p.backgroundAudio?.pause();
           clearTimeout(p.backgroundAudioTimeout);
@@ -155,11 +155,18 @@ const Page = (props: PageProps) => {
           )}
         </AnimatePresence>
 
-        {currentCopyrightParagraphIndex < 8 && (
-          <span className={'absolute right-[100px] bottom-[40px] text-col-3'}>
-            [F] Skip
-          </span>
-        )}
+        <AnimatePresence>
+          {currentCopyrightParagraphIndex < 8 && (
+            <motion.span
+              className={'absolute right-[100px] bottom-[40px] text-col-3'}
+              initial={{opacity: 1}}
+              exit={{opacity: 0}}
+              transition={{duration: 1}}
+            >
+              [F] Skip
+            </motion.span>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );

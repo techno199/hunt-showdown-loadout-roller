@@ -87,5 +87,3 @@ export const DEFAULT_TOOLS_PRESET = [
   [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|dusters|aid/)?.length)],
   [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|dusters|aid/)?.length)]
 ]
-
-console.log(DEFAULT_TOOLS_PRESET)
