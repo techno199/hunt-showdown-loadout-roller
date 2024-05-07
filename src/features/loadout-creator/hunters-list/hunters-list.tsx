@@ -33,11 +33,12 @@ const HuntersList = (props: HuntersListProps) => {
               variant={'flat'}
               className={'flex items-center w-full text-left text-2xl'}
               selected={selectedLoadout?.id === loadout.id}
+              sfx={'selectHunter1'}
               onClick={onLoadoutClick(loadout)}
             >
               {loadout.hunterName}
               {loadout.weaponSlots!?.find((s: TWeaponSlot) => s.dualWielding) && (
-                <Image src={DualWield} className={'h-[26px] w-auto'} />
+                <Image alt={''} src={DualWield} className={'h-[26px] w-auto'} />
               )}
             </Button>
           </motion.div>
@@ -46,6 +47,7 @@ const HuntersList = (props: HuntersListProps) => {
         <Button
           variant={'flat'}
           className={'flex items-center w-full text-left uppercase !bg-col-7/20 hover:!bg-col-8/80 animate-glow'}
+          sfx={'recruitHunter1'}
           onClick={onGenerateClick}
         >
           Recruit Hunter
@@ -53,6 +55,7 @@ const HuntersList = (props: HuntersListProps) => {
 
         {Array(15).fill(null).map((_, i) => (
           <Button
+            key={i}
             variant={'flat'}
             className={'flex items-center w-full text-left text-2xl'}
           >
@@ -66,6 +69,7 @@ const HuntersList = (props: HuntersListProps) => {
           variant={'flat'}
           className={'text-left w-full uppercase !bg-col-5/30 hover:shadow-[0_0px_25px_-5px_rgb(215_38_61)]'}
           disabled={!hunterLoadouts.length}
+          sfx={'cancel'}
           onClick={onDismissAll}
         >
           Dismiss Everyone

@@ -35,31 +35,31 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
 
         <div className={'flex flex-col justify-end items-center gap-3 w-[60px] shrink-0 py-3 border-2 border-col-2 rounded bg-col-6'}>
           {weaponSlot?.weapon.ammoType === AmmoType.SMALL && (
-            <Image src={SmallAmmo} className={'w-[35px]'} />
+            <Image alt={''} src={SmallAmmo} className={'w-[35px]'} />
           )}
 
           {weaponSlot?.weapon.ammoType === AmmoType.MEDIUM && (
-            <Image src={MediumAmmo} className={'w-[45px]'} />
+            <Image alt={''} src={MediumAmmo} className={'w-[45px]'} />
           )}
 
           {weaponSlot?.weapon.ammoType === AmmoType.LARGE && (
-            <Image src={LargeAmmo} className={'w-[50px]'} />
+            <Image alt={''} src={LargeAmmo} className={'w-[50px]'} />
           )}
 
           {weaponSlot?.weapon.ammoType === AmmoType.SHELL && (
-            <Image src={ShellAmmo} />
+            <Image alt={''} src={ShellAmmo} />
           )}
 
           {weaponSlot?.weapon.ammoType === AmmoType.CROSSBOW && (
-            <Image src={CrossbowAmmo} />
+            <Image alt={''} src={CrossbowAmmo} />
           )}
 
           {weaponSlot?.weapon.ammoType === AmmoType.PROTOTYPE && (
-            <Image src={PrototypeAmmo} />
+            <Image alt={''} src={PrototypeAmmo} />
           )}
 
           {weaponSlot?.weapon.ammoType === AmmoType.NITRO_EXPRESS && (
-            <Image src={NitroExpressAmmo} />
+            <Image alt={''} src={NitroExpressAmmo} />
           )}
         </div>
     </div>

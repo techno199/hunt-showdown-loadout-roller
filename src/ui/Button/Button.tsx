@@ -1,14 +1,46 @@
 import React, {HTMLAttributes} from 'react';
 import clsx from "clsx";
+import {AppMultimediaCenter} from "@/features/app-multimedia-center/app-multimedia-center";
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
   variant?: 'stroke' | 'flat';
   disabled?: boolean;
   selected?: boolean;
+  // Sound effect
+  sfx?: 'click1' | 'click2' | 'cancel' | 'recruitHunter1' | 'selectHunter1';
 };
 
 const Button = (props: ButtonProps) => {
-  const { className, variant, disabled, selected, ...rest } = props;
+  const { className, variant, disabled, selected, sfx = 'click1', onClick, ...rest } = props;
+
+  const handleClick = (e: any) => {
+    onClick?.(e);
+
+    let src, currentTime = 0;
+    switch (sfx) {
+      case 'click1':
+        src = '/crytek-assets/sfx/hunt_sfx_click1.mp3';
+        currentTime = 0.2;
+        break;
+      case 'click2':
+        src = '/crytek-assets/sfx/hunt_sfx_click2.mp3';
+        break;
+      case 'cancel':
+        currentTime = 0.13;
+        src = '/crytek-assets/sfx/hunt_sfx_cancel.mp3';
+        break;
+      case 'recruitHunter1':
+        src = '/crytek-assets/sfx/hunt_sfx_recruithunter1.mp3';
+        break;
+      case 'selectHunter1':
+        src = '/crytek-assets/sfx/hunt_sfx_selecthunter1.mp3'
+    }
+
+    const audio = new Audio(src);
+    audio.currentTime = currentTime;
+    AppMultimediaCenter.playStreamSfx(audio);
+  }
+
   return (
     <button
       className={clsx(className, 'relative duration-200', {
@@ -24,6 +56,7 @@ const Button = (props: ButtonProps) => {
         ['!bg-col-1/100']: variant === 'flat' && selected,
         ['text-col-2/40 pointer-events-none']: variant === 'flat' && disabled,
       })}
+      onClick={handleClick}
       {...rest}
     />
   );

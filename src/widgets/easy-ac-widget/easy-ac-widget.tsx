@@ -55,6 +55,7 @@ const EasyAcWidget = (props: EasyAcWidgetProps) => {
       'bg-[url("/crytek-assets/easy-ac-bg.jpg")] bg-cover w-[1000px] h-[550px]'}
     >
       <Image
+        alt={''}
         className={'absolute w-[550px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'}
         src={HuntLogo}
       />
@@ -62,11 +63,11 @@ const EasyAcWidget = (props: EasyAcWidgetProps) => {
       <div className={'flex flex-col justify-end gap-10'}>
         <div className={'relative flex items-end gap-6 pl-[40px] pr-[60px]'}>
           <motion.div initial={{scale: 0, opacity: 0.2}} animate={{scale: 1, opacity: 1}} transition={{duration: 1.5}}>
-            <Image className={'h-[80px] w-auto'} src={easyACLogo} />
+            <Image alt={''} className={'h-[80px] w-auto'} src={easyACLogo} />
           </motion.div>
 
           <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2, delay: 1}}>
-            <Image className={'h-[80px] w-auto'} src={easyACLogoText}/>
+            <Image alt={''} className={'h-[80px] w-auto'} src={easyACLogoText}/>
           </motion.div>
 
           <div className={'relative ml-auto uppercase text-xl'}>

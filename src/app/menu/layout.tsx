@@ -27,7 +27,9 @@ const MenuLayout = (props: any) => {
         {/* Меню */}
         <div className={'flex flex-col gap-4 py-2'}>
           <Link href={'/menu/loadout-creator'}>
-            <Button variant={'stroke'} selected={pathname === '/menu/loadout-creator'} className={'!text-base w-full'}>Loadout creator</Button>
+            <Button variant={'stroke'} selected={pathname === '/menu/loadout-creator'} className={'!text-base w-full'}>
+              Loadout creator
+            </Button>
           </Link>
           <Button variant={'stroke'} selected={pathname === '/menu/options'} className={'!text-base w-full'} disabled>Options</Button>
           <Button variant={'stroke'} className={'!text-base'} onClick={handleExit}>Exit</Button>

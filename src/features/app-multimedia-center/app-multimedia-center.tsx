@@ -1,10 +1,12 @@
 import {MUSIC_PRESET_CONFIG, MusicPreset} from "@/features/app-multimedia-center/entities/music-preset";
 import {getRandomInt} from "@/utils/get-random-int";
+import App from "next/app";
 
 export class AppMultimediaCenter {
   static preset = MusicPreset.VOCAL;
   static currentLoopTracks = [] as string[];
-  static currentAudio = null as unknown as HTMLAudioElement;
+  static currentLoopTrack = null as unknown as HTMLAudioElement;
+  static currentStreamSfx = null as unknown as HTMLAudioElement;
 
   static setMusicPreset = (preset: MusicPreset) => {
     AppMultimediaCenter.preset = preset;
@@ -16,13 +18,13 @@ export class AppMultimediaCenter {
     AppMultimediaCenter.currentLoopTracks = [...musicConfig!.soundtrackSrc];
 
     const playLoopRecursive = () => {
-      if (!AppMultimediaCenter.currentAudio) {
+      if (!AppMultimediaCenter.currentLoopTrack) {
         if (AppMultimediaCenter.currentLoopTracks.length > 0) {
           const nextLoopTrackIndex = getRandomInt(0, AppMultimediaCenter.currentLoopTracks.length -1);
           const nextTrackSrc = AppMultimediaCenter.currentLoopTracks[nextLoopTrackIndex];
           AppMultimediaCenter.currentLoopTracks = AppMultimediaCenter.currentLoopTracks.filter(t => t !== nextTrackSrc);
           const track = new Audio(nextTrackSrc);
-          AppMultimediaCenter.currentAudio = track;
+          AppMultimediaCenter.currentLoopTrack = track;
           track.volume = 0.05;
           track.play();
           track.onended = () => {
@@ -31,7 +33,7 @@ export class AppMultimediaCenter {
         }
 
         if (AppMultimediaCenter.currentLoopTracks.length === 0) {
-          AppMultimediaCenter.currentAudio = null!;
+          AppMultimediaCenter.currentLoopTrack = null!;
           AppMultimediaCenter.startPresetLoop();
         }
       }
@@ -41,7 +43,13 @@ export class AppMultimediaCenter {
   }
 
   static stopCurrentLoop = () => {
-    AppMultimediaCenter.currentAudio?.pause();
-    AppMultimediaCenter.currentAudio = null!;
+    AppMultimediaCenter.currentLoopTrack?.pause();
+    AppMultimediaCenter.currentLoopTrack = null!;
+  }
+
+  static playStreamSfx = (sfx: HTMLAudioElement) => {
+    AppMultimediaCenter.currentStreamSfx?.pause();
+    AppMultimediaCenter.currentStreamSfx = sfx;
+    sfx.play();
   }
 }

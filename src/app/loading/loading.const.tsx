@@ -26,18 +26,18 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
   ),
   (
     <div key={'3'} className={'flex flex-col items-center gap-4'}>
-      <Image src={HuntHeadphones} />
+      <Image alt={''} src={HuntHeadphones} />
       <p>HUNT is best experienced in Stereo with Headphones for full 3D binaural Audio.</p>
     </div>
   ),
   (
     <div key={'4'}>
-      <Image src={CrytekLogo} />
+      <Image alt={''} src={CrytekLogo} />
     </div>
   ),
   (
     <div key={'5'}>
-      <Image src={CryengineLogo} />
+      <Image alt={''} src={CryengineLogo} />
     </div>
   ),
   (
@@ -66,7 +66,7 @@ export const LOADING_PAGE_COPYRIGHT_PARAGRAPHS = [
   ),
   (
     <div key={'8'} className={'w-[650px]'}>
-      <Image src={HuntLogo} />
+      <Image alt={''} src={HuntLogo} />
     </div>
   )
 ];
