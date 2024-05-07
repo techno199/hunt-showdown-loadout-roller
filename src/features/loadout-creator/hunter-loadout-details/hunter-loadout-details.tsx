@@ -51,7 +51,16 @@ const HunterLoadoutDetails = (props: HunterLoadoutDetailsProps) => {
               key={i}
               className={'flex items-end justify-center p-1.5 text-center border border-col-2/50 bg-col-6 h-[120px]'}
             >
-              <span className={'text-sm'}>{consumable?.name}</span>
+              {consumable && (
+                <Image
+                  src={consumable.src}
+                  width={100}
+                  height={100}
+                  alt={''}
+                  className={'absolute'}
+                />
+              )}
+              <span className={'relative text-sm'}>{consumable?.name}</span>
             </div>
           )
         })}

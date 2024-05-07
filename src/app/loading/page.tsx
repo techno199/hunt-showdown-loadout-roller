@@ -15,6 +15,9 @@ export type PageProps = {}
 const Page = (props: PageProps) => {
   const [state, setState] = useState({
     timer: 0,
+    backgroundAudio: null as unknown as HTMLAudioElement,
+    backgroundAudioTimeout: 0 as NodeJS.Timeout,
+    copyrightSliderInterval: 0 as NodeJS.Timeout,
     currentCopyrightParagraphIndex: 0,
     currentConnectivityParagraphIndex: 0
   });
@@ -26,18 +29,25 @@ const Page = (props: PageProps) => {
     // Итерация по сообщениям копирайта
     const audio = new Audio('crytek-assets/Hunt Showdown Intro.mp3');
 
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       audio.play();
-    }, 15000)
+    }, 15000);
 
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setState(p => ({
         ...p,
         timer: p.timer + 100,
         currentCopyrightParagraphIndex: p.timer > LOADING_PAGE_COPYRIGHT_PARAGRAPH_TRANSITION_THRESHOLDS[p.currentCopyrightParagraphIndex] * 1000 ?
           p.currentCopyrightParagraphIndex + 1 : p.currentCopyrightParagraphIndex
       }));
-    }, 100)
+    }, 100);
+
+    setState(p => ({
+      ...p,
+      backgroundAudio: audio,
+      backgroundAudioTimeout: timeoutId,
+      copyrightSliderInterval: intervalId
+    }));
   }, []);
 
   useEffect(() => {
@@ -65,6 +75,29 @@ const Page = (props: PageProps) => {
       setIrregularBackendLoadingInterval();
     }, Math.min(Math.random() / 2 + 0.2, 0.6)*1000);
   }
+
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.key === 'f') {
+        setState(p => {
+          p.backgroundAudio?.pause();
+          clearTimeout(p.backgroundAudioTimeout);
+          clearInterval(p.copyrightSliderInterval);
+
+          return {
+            ...p,
+            currentCopyrightParagraphIndex: LOADING_PAGE_COPYRIGHT_PARAGRAPHS.length
+          }
+        })
+      }
+    }
+
+    document.addEventListener('keyup', listener);
+
+    return () => {
+      document.removeEventListener('keyup', listener);
+    }
+  }, [])
 
   return (
     <motion.div
@@ -121,6 +154,12 @@ const Page = (props: PageProps) => {
             </MotionComponent>
           )}
         </AnimatePresence>
+
+        {currentCopyrightParagraphIndex < 8 && (
+          <span className={'absolute right-[100px] bottom-[40px] text-col-3'}>
+            [F] Skip
+          </span>
+        )}
       </div>
     </motion.div>
   );
