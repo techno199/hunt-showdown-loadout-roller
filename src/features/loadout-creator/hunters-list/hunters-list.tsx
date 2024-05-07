@@ -19,11 +19,6 @@ const HuntersList = (props: HuntersListProps) => {
 
   const scrollableRef = useRef(null as HTMLDivElement);
 
-  const handleGenerateClick = () => {
-    onGenerateClick();
-    setTimeout(() => scrollableRef.current?.scrollTo(0, scrollableRef.current.scrollHeight), 10);
-  }
-
   return (
     <div className={'flex flex-col gap-4'}>
       <div className={'flex flex-col gap-4 basis-0 grow overflow-auto'} ref={scrollableRef}>
@@ -36,7 +31,7 @@ const HuntersList = (props: HuntersListProps) => {
           >
             <Button
               variant={'flat'}
-              className={'flex items-center w-full text-left'}
+              className={'flex items-center w-full text-left text-2xl'}
               selected={selectedLoadout?.id === loadout.id}
               onClick={onLoadoutClick(loadout)}
             >
@@ -51,10 +46,19 @@ const HuntersList = (props: HuntersListProps) => {
         <Button
           variant={'flat'}
           className={'flex items-center w-full text-left uppercase !bg-col-7/20 hover:!bg-col-8/80 animate-glow'}
-          onClick={handleGenerateClick}
+          onClick={onGenerateClick}
         >
           Recruit Hunter
         </Button>
+
+        {Array(15).fill(null).map((_, i) => (
+          <Button
+            variant={'flat'}
+            className={'flex items-center w-full text-left text-2xl'}
+          >
+            <span className={'opacity-30'}>(EMPTY)</span>
+          </Button>
+        ))}
       </div>
 
       <div className={'flex gap-2'}>
