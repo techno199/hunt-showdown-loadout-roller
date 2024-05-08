@@ -5,7 +5,7 @@ export type TWeapon = {
   name: string;
   slotSize: number;
   ammoType: AmmoType;
-  ammoModifier?: AmmoModifier;
-  availableAmmoModifiers?: AmmoModifier[];
+  availableAmmoTypes?: AmmoType[];
   dualWieldingAvailable?: boolean;
+  src?: string;
 }

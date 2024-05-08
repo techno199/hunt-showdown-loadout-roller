@@ -1,6 +1,6 @@
 import {getRandomInt} from "@/utils/get-random-int";
 
-export const getRandomWeightedItem = <T extends  {weight: number}>(items: T[]) => {
+export const getRandomWeightedItem = (items:  any[]) => {
   const totalWeight = items.reduce((previousValue, currentValue) => previousValue + (currentValue.weight || 1), 0);
   const rnd = getRandomInt(0, totalWeight);
 

@@ -20,14 +20,26 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
   return (
     <div className={'flex gap-2 h-[120px]'}>
       {Array(weaponSlot?.dualWielding ? 2 : 1).fill(0).map((_, i) => (
-        <div key={i} className={'flex flex-col border-2 border-col-2/50 rounded p-2.5 grow bg-col-6'}>
+        <div key={i} className={'relative flex flex-col border-2 border-col-2/50 rounded p-2.5 grow bg-col-9  z-0'}>
           <div className={'flex items-center justify-between grow'}>
-            <span>{weaponSlot?.weapon.name}</span>
+            {weaponSlot?.weapon.src && (
+              <Image
+                alt={''}
+                src={weaponSlot.weapon.src}
+                width={1000}
+                height={1000}
+                className={'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-full w-auto'}
+              />
+            )}
           </div>
-          <div className={'flex gap-2'}>
-            {[1,2,3].map(i => (
-              <div key={i} className={clsx('w-3 h-3 border border-col-2', {['bg-white']: i <= (weaponSlot?.weapon.slotSize || 0)})} />
-            ))}
+          <div className={'flex gap-8 items-end'}>
+            <div className={'flex gap-2'}>
+              {[1,2,3].map(i => (
+                <div key={i} className={clsx('w-3 h-3 border border-col-2', {['bg-white']: i <= (weaponSlot?.weapon.slotSize || 0)})} />
+              ))}
+            </div>
+
+            <span className={'text-base leading-[12px]'}>{weaponSlot?.weapon.name}</span>
           </div>
         </div>
       ))}
