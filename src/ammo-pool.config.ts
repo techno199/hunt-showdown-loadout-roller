@@ -1,0 +1,127 @@
+import {AmmoTypeId} from "@/entities/ammo-type";
+
+export const BORNHEIM_AMMO_POOL = [
+  AmmoTypeId.SMALL_INCENDIARY,
+  AmmoTypeId.SMALL_HIGH_VELOCITY
+];
+
+export const CALDWELL_AMMO_POOL = [
+  AmmoTypeId.SMALL_DUMDUM,
+  AmmoTypeId.SMALL_FMJ
+];
+
+export const CALDWELL_MARATHON_AMMO_POOL = [
+  AmmoTypeId.SMALL_POISON,
+  AmmoTypeId.SMALL_FMJ
+];
+
+export const LEMAT_BULLET_AMMO_POOL = [
+  AmmoTypeId.SMALL_FMJ,
+  AmmoTypeId.SMALL_INCENDIARY
+];
+
+export const LEMAT_SHELL_AMMO_POOL = [
+  AmmoTypeId.SHELL_DRAGON_BREATH,
+  AmmoTypeId.SHELL_SLUG,
+  AmmoTypeId.SHELL_STARSHELL
+];
+
+export const NAGANT_AMMO_POOL = [
+  AmmoTypeId.SMALL_HIGH_VELOCITY,
+  AmmoTypeId.SMALL_DUMDUM,
+  AmmoTypeId.SMALL_POISON
+];
+
+export const WINFIELD_AMMO_POOL = [
+  AmmoTypeId.SMALL_FMJ,
+  AmmoTypeId.SMALL_HIGH_VELOCITY,
+  AmmoTypeId.SMALL_INCENDIARY,
+  AmmoTypeId.SMALL_POISON
+];
+
+export const CALDWELL_PAX_AMMO_POOL = [
+  AmmoTypeId.MEDIUM_DUMDUM,
+  AmmoTypeId.MEDIUM_POISON,
+  AmmoTypeId.MEDIUM_INCENDIARY,
+  AmmoTypeId.MEDIUM_FMJ,
+  AmmoTypeId.MEDIUM_HIGH_VELOCITY
+];
+
+export const SCOTTFIELD_AMMO_POOL = [
+  AmmoTypeId.MEDIUM_DUMDUM,
+  AmmoTypeId.MEDIUM_INCENDIARY,
+  AmmoTypeId.MEDIUM_FMJ,
+  AmmoTypeId.MEDIUM_HIGH_VELOCITY
+];
+
+export const SPRINGFIELD_AMMO_POOL = [
+  AmmoTypeId.MEDIUM_DUMDUM,
+  AmmoTypeId.MEDIUM_HIGH_VELOCITY,
+  AmmoTypeId.MEDIUM_EXPLOSIVE,
+  AmmoTypeId.MEDIUM_POISON
+];
+
+export const VETTERLY_AMMO_POOL = [
+  AmmoTypeId.MEDIUM_HIGH_VELOCITY,
+  AmmoTypeId.MEDIUM_FMJ,
+  AmmoTypeId.MEDIUM_INCENDIARY
+];
+
+export const WINFIELD_CENTENNIAL_AMMO_POOL = [
+  AmmoTypeId.MEDIUM_DUMDUM,
+  AmmoTypeId.MEDIUM_HIGH_VELOCITY,
+  AmmoTypeId.MEDIUM_FMJ,
+  AmmoTypeId.MEDIUM_POISON
+]
+
+export const CALDWELL_RIVAL_AMMO_POOL = [
+  AmmoTypeId.SHELL_DRAGON_BREATH,
+  AmmoTypeId.SHELL_FLECHETTE,
+  AmmoTypeId.SHELL_SLUG,
+  AmmoTypeId.SHELL_PENNYSHOT
+];
+
+export const CROWN_KING_AMMO_POOL = [
+  AmmoTypeId.SHELL_SLUG,
+  AmmoTypeId.SHELL_PENNYSHOT,
+  AmmoTypeId.SHELL_FLECHETTE
+];
+
+export const DRILLING_BULLET_AMMO_POOL = [
+  AmmoTypeId.MEDIUM_DUMDUM,
+  AmmoTypeId.MEDIUM_FMJ
+];
+
+export const DRILLING_SHELL_AMMO_POOL = [
+  AmmoTypeId.SHELL_FLECHETTE,
+  AmmoTypeId.SHELL_SLUG,
+  AmmoTypeId.SHELL_PENNYSHOT
+];
+
+export const ROMERO_AMMO_POOL = [
+  AmmoTypeId.SHELL_DRAGON_BREATH,
+  AmmoTypeId.SHELL_PENNYSHOT,
+  AmmoTypeId.SHELL_STARSHELL,
+  AmmoTypeId.SHELL_SLUG
+];
+
+export const SPECTER_AMMO_POOL = [
+  AmmoTypeId.SHELL_DRAGON_BREATH,
+  AmmoTypeId.SHELL_FLECHETTE,
+  AmmoTypeId.SHELL_STARSHELL,
+  AmmoTypeId.SHELL_SLUG
+];
+
+export const WINFIELD_TERMINUS_AMMO_POOL = [
+  AmmoTypeId.SHELL_DRAGON_BREATH,
+  AmmoTypeId.SHELL_FLECHETTE,
+  AmmoTypeId.SHELL_STARSHELL,
+  AmmoTypeId.SHELL_SLUG
+];
+
+export const WINFIELD_SLATE_AMMO_POOL = [
+  AmmoTypeId.SHELL_PENNYSHOT,
+  AmmoTypeId.SHELL_SLUG
+];
+
+

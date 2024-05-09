@@ -6,6 +6,7 @@ import WeaponSlot from "@/features/loadout-creator/_shared/weapon-slot";
 import HuntersList from "@/features/loadout-creator/hunters-list/hunters-list";
 import HunterLoadoutDetails from "@/features/loadout-creator/hunter-loadout-details/hunter-loadout-details";
 import {TWeaponSlot} from "@/entities/weapon-slot";
+import LoadoutCreatorCacheValidation from "@/features/loadout-creator/loadout-creator-cache-validation";
 
 export type LoadoutCreatorProps = {}
 
@@ -60,22 +61,24 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   }
 
   return (
-    <div className={'grid grid-cols-2 gap-8'}>
-      {/* Список хантеров */}
-      <HuntersList
-        hunterLoadouts={huntersLoadouts}
-        selectedLoadout={selectedLoadout}
-        onLoadoutClick={handleLoadoutClick}
-        onDismissAll={handleDismissAll}
-        onGenerateClick={handleGenerateLoadout}
-      />
+    <LoadoutCreatorCacheValidation>
+      <div className={'grid grid-cols-2 gap-8'}>
+        {/* Список хантеров */}
+        <HuntersList
+          hunterLoadouts={huntersLoadouts}
+          selectedLoadout={selectedLoadout}
+          onLoadoutClick={handleLoadoutClick}
+          onDismissAll={handleDismissAll}
+          onGenerateClick={handleGenerateLoadout}
+        />
 
-      {/* Лоадаут выбранного хантера */}
-     <HunterLoadoutDetails
-       selectedLoadout={selectedLoadout}
-       onDismiss={() => handleDismiss()}
-     />
-    </div>
+        {/* Лоадаут выбранного хантера */}
+       <HunterLoadoutDetails
+         selectedLoadout={selectedLoadout}
+         onDismiss={() => handleDismiss()}
+       />
+      </div>
+    </LoadoutCreatorCacheValidation>
   );
 };
 

@@ -2,12 +2,13 @@ import {TWeapon} from "@/entities/weapon";
 import {TToolSlot} from "@/entities/tool-slot";
 import {TConsumableSlot} from "@/entities/consumable-slot";
 import {names, uniqueNamesGenerator} from "unique-names-generator";
-import {WEAPONS_CONFIG} from "@/weapons.config";
+import {TWeaponConfigItem, WEAPONS_CONFIG} from "@/weapons.config";
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import {getRandomInt} from "@/utils/get-random-int";
 import {DEFAULT_TOOLS_PRESET, TOOLS_CONFIG} from "@/tools.config";
 import {CONSUMABLES_CONFIG} from "@/consumables.config";
 import {getRandomWeightedItem} from "@/utils/get-random-weighted-item";
+import {AmmoTypeId} from "@/entities/ammo-type";
 
 const HUNTER_BASE_MAX_SLOTS = 4;
 
@@ -35,22 +36,16 @@ export class HunterLoadout implements THunterLoadout {
     });
 
     // First weapon roll
-    const firstWeaponPool = WEAPONS_CONFIG.filter(w => w.slotSize > 1 || w.dualWieldingAvailable);
-    const firstWeapon: TWeapon = firstWeaponPool[getRandomInt(1, firstWeaponPool.length) - 1];
-    const firstWeaponSlot: TWeaponSlot = {
-      weapon: firstWeapon,
-      dualWielding: firstWeapon.dualWieldingAvailable
-    }
-    const firstWeaponSlotSize = firstWeapon.dualWieldingAvailable ? 2 : 3;
+    const firstWeaponSlot = this.__rollWeaponSlot({
+      availableSize: 4
+    });
+    const firstWeaponSlotSize = firstWeaponSlot.dualWielding ? 2 : firstWeaponSlot.weapon.slotSize;
 
     // Second weapon roll
-    const secondWeaponAvailableSize = HUNTER_BASE_MAX_SLOTS - firstWeaponSlotSize;
-    const secondWeaponPool = WEAPONS_CONFIG.filter(w => w.slotSize <= secondWeaponAvailableSize);
-    const secondWeapon = secondWeaponPool[getRandomInt(1, secondWeaponPool.length) - 1];
-    const secondWeaponSlot: TWeaponSlot = {
-      weapon: secondWeapon,
-      dualWielding: !firstWeaponSlot.dualWielding && secondWeapon.dualWieldingAvailable && secondWeaponAvailableSize === 2
-    };
+    const secondWeaponSlot = this.__rollWeaponSlot({
+      availableSize: 4 - firstWeaponSlotSize,
+      dualWieldProhibited: firstWeaponSlot.dualWielding
+    });
 
     this.weaponSlots[0] = firstWeaponSlot;
     this.weaponSlots[1] = secondWeaponSlot;
@@ -77,6 +72,36 @@ export class HunterLoadout implements THunterLoadout {
       consumablesPool.splice(nextConsumableIndex, 1);
       this.consumableSlots.push(nextTool);
     }
+  }
+
+  private __rollWeaponSlot = ({availableSize, dualWieldProhibited = false}) => {
+    // Create weapon pool
+    const weaponPool = WEAPONS_CONFIG.filter(w => w.slotSize <= availableSize || (w.dualWieldingAvailable && 2 <= availableSize));
+    // Roll random weapon from pool
+    const weaponConfigItem: TWeaponConfigItem = getRandomWeightedItem(weaponPool);
+    // Roll random ammo from ammo pool(s)
+    let ammoType = [];
+    if (weaponConfigItem.availableAmmoTypes) {
+      for (const ammoPool of weaponConfigItem.availableAmmoTypes || []) {
+        ammoType.push(getRandomWeightedItem(ammoPool));
+      }
+    } else {
+      ammoType = weaponConfigItem.ammoType
+    }
+    // Create weapon object
+    const weapon: TWeapon = {
+      name: weaponConfigItem.name,
+      ammoType,
+      slotSize: weaponConfigItem.slotSize,
+      dualWieldingAvailable: weaponConfigItem.dualWieldingAvailable && !dualWieldProhibited
+    }
+    // Create slot object
+    const weaponSlot: TWeaponSlot = {
+      weapon,
+      dualWielding: weapon.dualWieldingAvailable && availableSize >= 2
+    }
+
+    return weaponSlot;
   }
 
   toString() {
