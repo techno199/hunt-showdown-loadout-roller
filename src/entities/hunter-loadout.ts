@@ -76,7 +76,7 @@ export class HunterLoadout implements THunterLoadout {
 
   private __rollWeaponSlot = ({availableSize, dualWieldProhibited = false}) => {
     // Create weapon pool
-    const weaponPool = WEAPONS_CONFIG.filter(w => w.slotSize <= availableSize || (w.dualWieldingAvailable && 2 <= availableSize));
+    const weaponPool = [WEAPONS_CONFIG.find(ci => ci.name === 'Nagant M1895 Officer')].filter(w => w.slotSize <= availableSize || (w.dualWieldingAvailable && 2 <= availableSize));
     // Roll random weapon from pool
     const weaponConfigItem: TWeaponConfigItem = getRandomWeightedItem(weaponPool);
     // Roll random ammo from ammo pool(s)

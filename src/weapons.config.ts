@@ -292,7 +292,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_nagantofficer.png',
+    src: '/crytek-assets/weapons/weapon_nagantofficer_test.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
