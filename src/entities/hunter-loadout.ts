@@ -88,6 +88,12 @@ export class HunterLoadout implements THunterLoadout {
     } else {
       ammoType = weaponConfigItem.ammoType
     }
+    for (let ammoTypeItem of ammoType) {
+      if (!!weaponConfigItem.availableAmmoTypes && !weaponConfigItem.availableAmmoTypes?.flat().includes(ammoTypeItem)) {
+        debugger
+      }
+    }
+
     // Create weapon object
     const weapon: TWeapon = {
       name: weaponConfigItem.name,
