@@ -24,6 +24,7 @@ const MenuLayout = (props: any) => {
   return (
     <div className={'flex flex-col py-[200px] px-4 grow bg-[url("/crytek-assets/WebPageBackgrounds/Home-page-background.jpg")]'}>
       <div className={'grid grid-cols-[auto_1fr] gap-8 text-2xl text-col-2 max-w-[1500px] w-full mx-auto grow'}>
+        <div className={'absolute top-4 left-4 opacity-50 text-sm'}>{process.env.NEXT_PUBLIC_APP_VERSION}</div>
         {/* Меню */}
         <div className={'flex flex-col gap-4 py-2'}>
           <Link href={'/menu/loadout-creator'}>
