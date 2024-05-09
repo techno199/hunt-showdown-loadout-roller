@@ -497,7 +497,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     name: 'Springfield 1866 Compact Striker',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons_assets/weapon_springfieldstriker.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfieldcompactstriker.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
