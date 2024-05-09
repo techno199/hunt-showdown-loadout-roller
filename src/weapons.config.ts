@@ -36,126 +36,126 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [CALDWELL_RIVAL_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_caldwellrival.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellrival.png',
   },
   {
     name: 'Caldwell Rival 78 Handcannon',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [CALDWELL_RIVAL_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_caldwellrivalhandcannon.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellrivalhandcannon.png',
   },
   {
     name: 'Crown &King Auto-5',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [CROWN_KING_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_crown&king.png',
+    src: '/crytek-assets/weapons_assets/weapon_crown&king.png',
   },
   {
     name: 'Drilling',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM, AmmoTypeId.SHELL],
     availableAmmoTypes: [DRILLING_BULLET_AMMO_POOL, DRILLING_SHELL_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_drilling.png',
+    src: '/crytek-assets/weapons_assets/weapon_drilling.png',
   },
   {
     name: 'Drilling Handcannon',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [DRILLING_BULLET_AMMO_POOL, DRILLING_SHELL_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_drillinghandcannon.png',
+    src: '/crytek-assets/weapons_assets/weapon_drillinghandcannon.png',
   },
   {
     name: 'Drilling Hatchet',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [DRILLING_BULLET_AMMO_POOL, DRILLING_SHELL_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_drillinghatchet.png',
+    src: '/crytek-assets/weapons_assets/weapon_drillinghatchet.png',
   },
   {
     name: 'Romero 77',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [ROMERO_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_romero.png',
+    src: '/crytek-assets/weapons_assets/weapon_romero.png',
   },
   {
     name: 'Romero 77 Talon',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [ROMERO_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_romerotalon.png',
+    src: '/crytek-assets/weapons_assets/weapon_romerotalon.png',
   },
   {
     name: 'Romero 77 Handcannon',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [ROMERO_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_romerohandcannon.png',
+    src: '/crytek-assets/weapons_assets/weapon_romerohandcannon.png',
   },
   {
     name: 'Romero 77 Hatchet',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [ROMERO_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_romerohatchet.png',
+    src: '/crytek-assets/weapons_assets/weapon_romerohatchet.png',
   },
   {
     name: 'Romero 77 Alamo',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [ROMERO_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_romeroalamo.png',
+    src: '/crytek-assets/weapons_assets/weapon_romeroalamo.png',
   },
   {
     name: 'Specter 1882',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [SPECTER_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_specter.png',
+    src: '/crytek-assets/weapons_assets/weapon_specter.png',
   },
   {
     name: 'Specter 1882 Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [SPECTER_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_specterbayonet.png',
+    src: '/crytek-assets/weapons_assets/weapon_specterbayonet.png',
   },
   {
     name: 'Specter 1882 Compact',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [SPECTER_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_spectercompact.png',
+    src: '/crytek-assets/weapons_assets/weapon_spectercompact.png',
   },
   {
     name: 'Winfield 1887 Terminus',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [WINFIELD_TERMINUS_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_winfieldterminus.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldterminus.png',
   },
   {
     name: 'Winfield 1887 Terminus Handcannon',
     slotSize: 2,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [WINFIELD_TERMINUS_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_winfieldterminushandcannon.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldterminushandcannon.png',
   },
   {
     name: 'Winfield 1893 Slate',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [WINFIELD_SLATE_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_winfieldslate.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldslate.png',
   },
   {
     name: 'Winfield 1893 Slate Riposte',
     slotSize: 3,
     ammoType: [AmmoTypeId.SHELL],
     availableAmmoTypes: [WINFIELD_SLATE_AMMO_POOL],
-    src: '/crytek-assets/weapons/weapon_winfieldslateriposte.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldslateriposte.png',
   },
   // Small
   {
@@ -163,7 +163,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_bornheim.png',
+    src: '/crytek-assets/weapons_assets/weapon_bornheim.png',
     availableAmmoTypes: [BORNHEIM_AMMO_POOL]
   },
   {
@@ -171,14 +171,14 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_bornheimextended.png',
+    src: '/crytek-assets/weapons_assets/weapon_bornheimextended.png',
     availableAmmoTypes: [BORNHEIM_AMMO_POOL]
   },
   {
     name: 'Bornheim No. 3 Match',
     slotSize: 2,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_bornheimmatch.png',
+    src: '/crytek-assets/weapons_assets/weapon_bornheimmatch.png',
     availableAmmoTypes: [BORNHEIM_AMMO_POOL]
   },
   {
@@ -186,7 +186,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_bornheimsilencer.png',
+    src: '/crytek-assets/weapons_assets/weapon_bornheimsilencer.png',
     availableAmmoTypes: [BORNHEIM_AMMO_POOL]
   },
   {
@@ -194,7 +194,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellnewarmy.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellnewarmy.png',
     availableAmmoTypes: [CALDWELL_AMMO_POOL]
   },
   {
@@ -202,7 +202,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellnewarmyswift.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellnewarmyswift.png',
     availableAmmoTypes: [CALDWELL_AMMO_POOL]
   },
   {
@@ -210,7 +210,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellconversion.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellconversion.png',
     availableAmmoTypes: [CALDWELL_AMMO_POOL]
   },
   {
@@ -218,21 +218,21 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellconversionchain.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellconversionchain.png',
     availableAmmoTypes: [CALDWELL_AMMO_POOL]
   },
   {
     name: 'Caldwell Marathon',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_caldwellmarathon.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellmarathon.png',
     availableAmmoTypes: [CALDWELL_MARATHON_AMMO_POOL]
   },
   {
     name: 'Caldwell Marathon Swift',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_caldwellmarathonswift.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellmarathonswift.png',
     availableAmmoTypes: CALDWELL_MARATHON_AMMO_POOL
   },
   {
@@ -240,21 +240,21 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL, AmmoTypeId.SHELL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_lemat.png',
+    src: '/crytek-assets/weapons_assets/weapon_lemat.png',
     availableAmmoTypes: [LEMAT_BULLET_AMMO_POOL, LEMAT_SHELL_AMMO_POOL]
   },
   {
     name: 'LeMat Mark II Carbine',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL, AmmoTypeId.SHELL],
-    src: '/crytek-assets/weapons/weapon_lematcarbine.png',
+    src: '/crytek-assets/weapons_assets/weapon_lematcarbine.png',
     availableAmmoTypes:  [LEMAT_BULLET_AMMO_POOL, LEMAT_SHELL_AMMO_POOL]
   },
   {
     name: 'LeMat Mark II Carbine Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL, AmmoTypeId.SHELL],
-    src: '/crytek-assets/weapons/weapon_lematcarbinemarksman.png',
+    src: '/crytek-assets/weapons_assets/weapon_lematcarbinemarksman.png',
     availableAmmoTypes:  [LEMAT_BULLET_AMMO_POOL, LEMAT_SHELL_AMMO_POOL]
   },
   {
@@ -262,14 +262,14 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_nagant.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagant.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
     name: 'Nagant M1895 Precision',
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_nagantprecision.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantprecision.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
@@ -277,14 +277,14 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_nagantsilencer.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantsilencer.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
     name: 'Nagant M1895 Precision Deadeye',
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_nagantprecisiondeadeye.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantprecisiondeadeye.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
@@ -292,7 +292,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_nagantofficer_test.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantofficer_test.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
@@ -300,98 +300,98 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.SMALL],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_nagantofficerbrawler.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantofficerbrawler.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
     name: 'Nagant M1895 Officer Carbine',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_nagantofficercarbine.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantofficercarbine.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
     name: 'Nagant M1895 Officer Carbine Deadeye',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_nagantofficercarbinedeadeye.png',
+    src: '/crytek-assets/weapons_assets/weapon_nagantofficercarbinedeadeye.png',
     availableAmmoTypes: [NAGANT_AMMO_POOL]
   },
   {
     name: 'Winfield M1873',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873 Aperture',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfieldaperture.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldaperture.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873 Musket Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfieldmusketbayonet.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldmusketbayonet.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873 Talon',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfieldtalon.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldtalon.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873 Swift',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfieldswift.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldswift.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873C',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield1873c.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield1873c.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873C Silencer',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield1873csilencer.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield1873csilencer.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873C Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield1873cmarksman.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield1873cmarksman.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873C Vandal',
     slotSize: 2,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield1873cvandal.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield1873cvandal.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873C Vandal Striker',
     slotSize: 2,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield1873cvandalstriker.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield1873cvandalstriker.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   {
     name: 'Winfield M1873C Vandal Deadeye',
     slotSize: 2,
     ammoType: [AmmoTypeId.SMALL],
-    src: '/crytek-assets/weapons/weapon_winfield1873cvandaldeadeye.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfield1873cvandaldeadeye.png',
     availableAmmoTypes: [WINFIELD_AMMO_POOL]
   },
   // Medium
@@ -400,7 +400,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellpax.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellpax.png',
     availableAmmoTypes: [CALDWELL_PAX_AMMO_POOL]
   },
   {
@@ -408,7 +408,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellpaxclaw.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellpaxclaw.png',
     availableAmmoTypes: [CALDWELL_PAX_AMMO_POOL]
   },
   {
@@ -416,7 +416,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_caldwellpaxtrueshot.png',
+    src: '/crytek-assets/weapons_assets/weapon_caldwellpaxtrueshot.png',
     availableAmmoTypes: [CALDWELL_PAX_AMMO_POOL]
   },
   {
@@ -424,7 +424,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_scottfield.png',
+    src: '/crytek-assets/weapons_assets/weapon_scottfield.png',
     availableAmmoTypes: [SCOTTFIELD_AMMO_POOL]
   },
   {
@@ -432,7 +432,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_scottfieldbrawler.png',
+    src: '/crytek-assets/weapons_assets/weapon_scottfieldbrawler.png',
     availableAmmoTypes: [SCOTTFIELD_AMMO_POOL]
   },
   {
@@ -440,7 +440,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_scottfieldswift.png',
+    src: '/crytek-assets/weapons_assets/weapon_scottfieldswift.png',
     availableAmmoTypes: [SCOTTFIELD_AMMO_POOL]
   },
   {
@@ -448,133 +448,133 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 1,
     ammoType: [AmmoTypeId.MEDIUM],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons/weapon_scottfieldspitfire.png',
+    src: '/crytek-assets/weapons_assets/weapon_scottfieldspitfire.png',
     availableAmmoTypes: [SCOTTFIELD_AMMO_POOL]
   },
   {
     name: 'Scottfield Model 3 Precision',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_scottfieldprecision.png',
+    src: '/crytek-assets/weapons_assets/weapon_scottfieldprecision.png',
     availableAmmoTypes: [SCOTTFIELD_AMMO_POOL]
   },
   {
     name: 'Springfield 1866',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_springfield.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfield.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
     name: 'Springfield 1866 Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_springfieldbayonet.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfieldbayonet.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
     name: 'Springfield 1866 Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_springfieldmarksman.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfieldmarksman.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
     name: 'Springfield 1866 Compact',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_springfieldcompact.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfieldcompact.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
     name: 'Springfield 1866 Compact Deadeye',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_springfieldcompactdeadeye.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfieldcompactdeadeye.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
     name: 'Springfield 1866 Compact Striker',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_springfieldstriker.png',
+    src: '/crytek-assets/weapons_assets/weapon_springfieldstriker.png',
     availableAmmoTypes: [SPRINGFIELD_AMMO_POOL]
   },
   {
     name: 'Vetterly 71 Karabiner',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_vetterly.png',
+    src: '/crytek-assets/weapons_assets/weapon_vetterly.png',
     availableAmmoTypes: [VETTERLY_AMMO_POOL]
   },
   {
     name: 'Vetterly 71 Karabiner Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_vetterlybayonet.png',
+    src: '/crytek-assets/weapons_assets/weapon_vetterlybayonet.png',
     availableAmmoTypes: [VETTERLY_AMMO_POOL]
   },
   {
     name: 'Vetterly 71 Karabiner Cyclone',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_vetterlycyclone.png',
+    src: '/crytek-assets/weapons_assets/weapon_vetterlycyclone.png',
     availableAmmoTypes: VETTERLY_AMMO_POOL
   },
   {
     name: 'Vetterly 71 Deadeye',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_vetterlydeadeye.png',
+    src: '/crytek-assets/weapons_assets/weapon_vetterlydeadeye.png',
     availableAmmoTypes: [VETTERLY_AMMO_POOL]
   },
   {
     name: 'Vetterly 71 Karabiner Silencer',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_vetterlysilencer.png',
+    src: '/crytek-assets/weapons_assets/weapon_vetterlysilencer.png',
     availableAmmoTypes: [VETTERLY_AMMO_POOL]
   },
   {
     name: 'Vetterly 71 Karabiner Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_vetterlymarksman.png',
+    src: '/crytek-assets/weapons_assets/weapon_vetterlymarksman.png',
     availableAmmoTypes: [VETTERLY_AMMO_POOL]
   },
   {
     name: 'Winfield M1976 Centennial',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_winfieldcentennial.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldcentennial.png',
     availableAmmoTypes: [WINFIELD_CENTENNIAL_AMMO_POOL]
   },
   {
     name: 'Winfield M1976 Centennial Shorty',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_winfieldcentennialshorty.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldcentennialshorty.png',
     availableAmmoTypes: [WINFIELD_CENTENNIAL_AMMO_POOL]
   },
   {
     name: 'Winfield M1976 Centennial Shorty Silencer',
     slotSize: 2,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_winfieldcentennialshortysilencer.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldcentennialshortysilencer.png',
     availableAmmoTypes: [WINFIELD_CENTENNIAL_AMMO_POOL]
   },
   {
     name: 'Winfield M1976 Centennial Sniper',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_winfieldcentennialsniper.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldcentennialsniper.png',
     availableAmmoTypes: [WINFIELD_CENTENNIAL_AMMO_POOL]
   },
   {
     name: 'Winfield M1976 Centennial Trauma',
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
-    src: '/crytek-assets/weapons/weapon_winfieldcentennialtrauma.png',
+    src: '/crytek-assets/weapons_assets/weapon_winfieldcentennialtrauma.png',
     availableAmmoTypes: [WINFIELD_CENTENNIAL_AMMO_POOL]
   },
   // Large
