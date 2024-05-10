@@ -604,7 +604,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     name: 'Berthier M1e 1892 Riposte',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_berthierreposte.png',
+    src: '/crytek-assets/weapons_assets/weapon_berthierriposte.png',
     availableAmmoTypes: [BERTHIER_AMMO_POOL]
   },
   {
