@@ -2,6 +2,7 @@ import {WEAPONS_CONFIG} from "@/weapons.config";
 import {DEFAULT_TOOLS_PRESET} from "@/tools.config";
 import {CONSUMABLES_CONFIG} from "@/consumables.config";
 import {TLoadoutPreset} from "@/entities/loadout-preset";
+import {AmmoTypeId} from "@/entities/ammo-type";
 
 export const DEFAULT_LOADOUT_PRESET: TLoadoutPreset = {
   id: 1,
@@ -17,5 +18,4 @@ export const DEFAULT_LOADOUT_PRESET: TLoadoutPreset = {
     CONSUMABLES_CONFIG,
     CONSUMABLES_CONFIG
   ],
-
 }

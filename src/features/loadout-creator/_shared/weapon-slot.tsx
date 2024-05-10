@@ -20,7 +20,7 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
         return (
           <div key={i} className={'relative flex flex-col border-2 border-col-2/50 rounded p-2.5 grow bg-col-9  z-0'}>
             <div className={'flex items-center justify-between grow'}>
-              {weaponConfigItem.src && (
+              {weaponConfigItem?.src && (
                 <Image
                   alt={''}
                   src={weaponConfigItem.src}

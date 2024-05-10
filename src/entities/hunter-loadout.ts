@@ -43,7 +43,8 @@ export class HunterLoadout implements THunterLoadout {
     // First weapon roll
     const firstWeaponSlot = this.__rollWeaponSlot({
       weaponPool: preset.weaponSlotPools[0],
-      availableSize: 4
+      availableSize: 4,
+      chanceToSpawnSpecialAmmo: preset.chanceToSpawnSpecialAmmo
     });
     const firstWeaponSlotSize = firstWeaponSlot.dualWielding ? 2 : firstWeaponSlot.weapon.slotSize;
 
@@ -54,7 +55,8 @@ export class HunterLoadout implements THunterLoadout {
       // Allow the only dual wield slot
       dualWieldProhibited: firstWeaponSlot.dualWielding,
       // Exclude first weapon dup
-      excludedWeapons: [firstWeaponSlot.weapon]
+      excludedWeapons: [firstWeaponSlot.weapon],
+      chanceToSpawnSpecialAmmo: preset.chanceToSpawnSpecialAmmo
     });
 
     this.weaponSlots[0] = firstWeaponSlot;
@@ -89,7 +91,8 @@ export class HunterLoadout implements THunterLoadout {
     availableSize,
     dualWieldProhibited = false,
     // Ability to exclude list of weapons regardless of preset
-    excludedWeapons = []
+    excludedWeapons = [],
+    chanceToSpawnSpecialAmmo
   }) => {
     // Create weapon pool
     const filteredWeaponPool = weaponPool.filter(w =>
@@ -102,7 +105,7 @@ export class HunterLoadout implements THunterLoadout {
     const weaponConfigItem: TWeaponConfigItem = getRandomWeightedItem(filteredWeaponPool);
     // Roll random ammo from ammo pool(s)
     let ammoType = [];
-    if (weaponConfigItem.availableAmmoTypes && Math.random() < 0.5) {
+    if (weaponConfigItem.availableAmmoTypes && Math.random() < chanceToSpawnSpecialAmmo) {
       for (const ammoPool of weaponConfigItem.availableAmmoTypes || []) {
         ammoType.push(getRandomWeightedItem(ammoPool));
       }
