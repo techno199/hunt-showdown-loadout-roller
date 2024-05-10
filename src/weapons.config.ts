@@ -1,5 +1,6 @@
 import {AmmoTypeId} from "@/entities/ammo-type";
 import {
+  BERTHIER_AMMO_POOL,
   BORNHEIM_AMMO_POOL,
   CALDWELL_AMMO_POOL,
   CALDWELL_MARATHON_AMMO_POOL,
@@ -7,14 +8,14 @@ import {
   CALDWELL_RIVAL_AMMO_POOL,
   CROWN_KING_AMMO_POOL,
   DRILLING_BULLET_AMMO_POOL,
-  DRILLING_SHELL_AMMO_POOL,
+  DRILLING_SHELL_AMMO_POOL, KRAG_AMMO_POOL, LEBEL_AMMO_POOL,
   LEMAT_BULLET_AMMO_POOL,
-  LEMAT_SHELL_AMMO_POOL,
+  LEMAT_SHELL_AMMO_POOL, MAKO_AMMO_POOL, MARTINI_AMMO_POOL, MOSIN_AMMO_POOL,
   NAGANT_AMMO_POOL,
   ROMERO_AMMO_POOL,
-  SCOTTFIELD_AMMO_POOL,
+  SCOTTFIELD_AMMO_POOL, SPARKS_AMMO_POOL,
   SPECTER_AMMO_POOL,
-  SPRINGFIELD_AMMO_POOL, VETTERLY_AMMO_POOL,
+  SPRINGFIELD_AMMO_POOL, UPPERCUT_AMMO_POOL, UPPERMAT_AMMO_POOL, VETTERLY_AMMO_POOL,
   WINFIELD_AMMO_POOL, WINFIELD_CENTENNIAL_AMMO_POOL,
   WINFIELD_SLATE_AMMO_POOL,
   WINFIELD_TERMINUS_AMMO_POOL
@@ -582,206 +583,240 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     name: 'Berthier M1e 1892',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_berthier.png'
+    src: '/crytek-assets/weapons_assets/weapon_berthier.png',
+    availableAmmoTypes: [BERTHIER_AMMO_POOL]
   },
   {
     name: 'Berthier M1e 1892 Deadeye',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_berthierdeadeye.png'
+    src: '/crytek-assets/weapons_assets/weapon_berthierdeadeye.png',
+    availableAmmoTypes: [BERTHIER_AMMO_POOL]
   },
   {
     name: 'Berthier M1e 1892 Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_berthiermarksman.png'
+    src: '/crytek-assets/weapons_assets/weapon_berthiermarksman.png',
+    availableAmmoTypes: [BERTHIER_AMMO_POOL]
   },
   {
     name: 'Berthier M1e 1892 Riposte',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_berthierreposte.png'
+    src: '/crytek-assets/weapons_assets/weapon_berthierreposte.png',
+    availableAmmoTypes: [BERTHIER_AMMO_POOL]
   },
   {
     name: 'Caldwell Conversion Uppercut',
     slotSize: 1,
     ammoType: [AmmoTypeId.LARGE],
     dualWieldingAvailable: true,
-    src: '/crytek-assets/weapons_assets/weapon_uppercut.png'
+    src: '/crytek-assets/weapons_assets/weapon_uppercut.png',
+    availableAmmoTypes: [UPPERCUT_AMMO_POOL]
   },
   {
     name: 'Caldwell Conversion Uppercut Precision',
     slotSize: 2,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_uppercutprecision.png'
+    src: '/crytek-assets/weapons_assets/weapon_uppercutprecision.png',
+    availableAmmoTypes: [UPPERCUT_AMMO_POOL]
   },
   {
     name: 'Caldwell Conversion Uppercut Precision Deadeye',
     slotSize: 2,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_uppercutprecisiondeadeye.png'
+    src: '/crytek-assets/weapons_assets/weapon_uppercutprecisiondeadeye.png',
+    availableAmmoTypes: [UPPERCUT_AMMO_POOL]
   },
   {
     name: 'LeMat II UpperMat',
     slotSize: 2,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_lematuppermat.png'
+    src: '/crytek-assets/weapons_assets/weapon_lematuppermat.png',
+    availableAmmoTypes: [UPPERMAT_AMMO_POOL]
   },
   {
     name: 'Lebel 1886',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_lebel.png'
+    src: '/crytek-assets/weapons_assets/weapon_lebel.png',
+    availableAmmoTypes: [LEBEL_AMMO_POOL]
   },
   {
     name: 'Lebel 1886 Aperture',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_lebelaperture.png'
+    src: '/crytek-assets/weapons_assets/weapon_lebelaperture.png',
+    availableAmmoTypes: [LEBEL_AMMO_POOL]
   },
   {
     name: 'Lebel 1886 Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_lebelmarksman.png'
+    src: '/crytek-assets/weapons_assets/weapon_lebelmarksman.png',
+    availableAmmoTypes: [LEBEL_AMMO_POOL]
   },
   {
     name: 'Lebel 1886 Talon',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_lebeltalon.png'
+    src: '/crytek-assets/weapons_assets/weapon_lebeltalon.png',
+    availableAmmoTypes: [LEBEL_AMMO_POOL]
   },
   {
     name: 'Mako 1895 Carbine',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mako.png'
+    src: '/crytek-assets/weapons_assets/weapon_mako.png',
+    availableAmmoTypes: [MAKO_AMMO_POOL]
   },
   {
     name: 'Mako 1895 Carbine Claw',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_makoclaw.png'
+    src: '/crytek-assets/weapons_assets/weapon_makoclaw.png',
+    availableAmmoTypes: [MAKO_AMMO_POOL]
   },
   {
     name: 'Mako 1895 Carbine Aperture',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_makoaperture.png'
+    src: '/crytek-assets/weapons_assets/weapon_makoaperture.png',
+    availableAmmoTypes: [MAKO_AMMO_POOL]
   },
   {
     name: 'Martini-Henry IC1',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_martini.png'
+    src: '/crytek-assets/weapons_assets/weapon_martini.png',
+    availableAmmoTypes: [MARTINI_AMMO_POOL]
   },
   {
     name: 'Martini-Henry IC1 Deadeye',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_martinideadeye.png'
+    src: '/crytek-assets/weapons_assets/weapon_martinideadeye.png',
+    availableAmmoTypes: [MARTINI_AMMO_POOL]
   },
   {
     name: 'Martini-Henry IC1 Ironside',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_martiniironside.png'
+    src: '/crytek-assets/weapons_assets/weapon_martiniironside.png',
+    availableAmmoTypes: [MARTINI_AMMO_POOL]
   },
   {
     name: 'Martini-Henry IC1 Marksman',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_martinimarksman.png'
+    src: '/crytek-assets/weapons_assets/weapon_martinimarksman.png',
+    availableAmmoTypes: [MARTINI_AMMO_POOL]
   },
   {
     name: 'Martini-Henry IC1 Riposte',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_martiniriposte.png'
+    src: '/crytek-assets/weapons_assets/weapon_martiniriposte.png',
+    availableAmmoTypes: [MARTINI_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant M1891',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosin.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosin.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant M1891 Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosindayonet.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosindayonet.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant M1891 Sniper',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosinsniper.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosinsniper.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant M1891 Avtomat',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosinavtomat.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosinavtomat.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant M1891 Obrez',
     slotSize: 2,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosinobrez.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosinobrez.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant Orbez Drum',
     slotSize: 2,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosinobrezdrum.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosinobrezdrum.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Mosin-Nagant Orbez Mace',
     slotSize: 2,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosinobrezmace.png'
+    src: '/crytek-assets/weapons_assets/weapon_mosinobrezmace.png',
+    availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
     name: 'Sparks LRR',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_sparks.png'
+    src: '/crytek-assets/weapons_assets/weapon_sparks.png',
+    availableAmmoTypes: [SPARKS_AMMO_POOL]
   },
   {
     name: 'Sparks LRR Silencer',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_sparkssilencer.png'
+    src: '/crytek-assets/weapons_assets/weapon_sparkssilencer.png',
+    availableAmmoTypes: [SPARKS_AMMO_POOL]
   },
   {
     name: 'Sparks LRR Sniper',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_sparkssniper.png'
+    src: '/crytek-assets/weapons_assets/weapon_sparkssniper.png',
+    availableAmmoTypes: [SPARKS_AMMO_POOL]
   },
   {
     name: 'Sparks Pistol',
     slotSize: 1,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_sparkspistol.png'
+    src: '/crytek-assets/weapons_assets/weapon_sparkspistol.png',
+    availableAmmoTypes: [SPARKS_AMMO_POOL]
   },
   {
     name: 'Springfield M1892 Krag',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_springfieldkrag.png'
+    src: '/crytek-assets/weapons_assets/weapon_springfieldkrag.png',
+    availableAmmoTypes: [KRAG_AMMO_POOL]
   },
   {
     name: 'Springfield M1892 Krag Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_springfieldkragbayonet.png'
+    src: '/crytek-assets/weapons_assets/weapon_springfieldkragbayonet.png',
+    availableAmmoTypes: [KRAG_AMMO_POOL]
   },
   {
     name: 'Springfield M1892 Krag Sniper',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_springfieldkragsniper.png'
+    src: '/crytek-assets/weapons_assets/weapon_springfieldkragsniper.png',
+    availableAmmoTypes: [KRAG_AMMO_POOL]
   },
   // Special
   {

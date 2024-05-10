@@ -124,4 +124,52 @@ export const WINFIELD_SLATE_AMMO_POOL = [
   AmmoTypeId.SHELL_SLUG
 ];
 
+export const BERTHIER_AMMO_POOL = [
+  AmmoTypeId.LARGE_SPITZER,
+  AmmoTypeId.LARGE_INCENDIARY
+];
+
+export const UPPERCUT_AMMO_POOL = [
+  AmmoTypeId.LARGE_FMJ,
+  AmmoTypeId.LARGE_INCENDIARY,
+  AmmoTypeId.LARGE_EXPLOSIVE
+];
+
+export const LEBEL_AMMO_POOL = [
+  AmmoTypeId.LARGE_SPITZER,
+  AmmoTypeId.LARGE_INCENDIARY
+];
+
+export const MAKO_AMMO_POOL = [
+  AmmoTypeId.LARGE_EXPLOSIVE,
+  AmmoTypeId.LARGE_FMJ
+];
+
+export const MARTINI_AMMO_POOL = [
+  AmmoTypeId.LARGE_INCENDIARY,
+  AmmoTypeId.LARGE_FMJ,
+  AmmoTypeId.LARGE_EXPLOSIVE
+];
+
+export const MOSIN_AMMO_POOL = [
+  AmmoTypeId.LARGE_INCENDIARY,
+  AmmoTypeId.LARGE_SPITZER
+];
+
+export const SPARKS_AMMO_POOL = [
+  AmmoTypeId.LARGE_INCENDIARY,
+  AmmoTypeId.LARGE_POISON,
+  AmmoTypeId.LARGE_FMJ
+];
+
+export const KRAG_AMMO_POOL = [
+  AmmoTypeId.LARGE_INCENDIARY,
+  AmmoTypeId.LARGE_FMJ
+];
+
+export const UPPERMAT_AMMO_POOL = [
+  AmmoTypeId.LARGE_POISON,
+  AmmoTypeId.LARGE_FMJ
+]
+
 
