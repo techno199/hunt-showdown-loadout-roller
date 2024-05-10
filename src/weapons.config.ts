@@ -731,7 +731,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     name: 'Mosin-Nagant M1891 Bayonet',
     slotSize: 3,
     ammoType: [AmmoTypeId.LARGE],
-    src: '/crytek-assets/weapons_assets/weapon_mosindayonet.png',
+    src: '/crytek-assets/weapons_assets/weapon_mosinbayonet.png',
     availableAmmoTypes: [MOSIN_AMMO_POOL]
   },
   {
