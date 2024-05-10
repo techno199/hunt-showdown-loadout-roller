@@ -233,7 +233,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 3,
     ammoType: [AmmoTypeId.SMALL],
     src: '/crytek-assets/weapons_assets/weapon_caldwellmarathonswift.png',
-    availableAmmoTypes: CALDWELL_MARATHON_AMMO_POOL
+    availableAmmoTypes: [CALDWELL_MARATHON_AMMO_POOL]
   },
   {
     name: 'LeMat Mark II',
