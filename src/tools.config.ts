@@ -1,3 +1,5 @@
+import {Weightable} from "@/entities/weightable";
+
 export const TOOLS_CONFIG = [
   {
     name: 'Choke Bombs',
@@ -81,9 +83,9 @@ export const TOOLS_CONFIG = [
   }
 ];
 
-export const DEFAULT_TOOLS_PRESET = [
+export const DEFAULT_TOOLS_PRESET: Weightable[][] = [
   [{name: 'First Aid Kit', weight: 1}],
   [{name: 'Knife', weight: 100}, {name: 'Heavy Knife', weight: 100}, {name: 'Dusters', weight: 100}, {name: 'Throwing Axes', weight: 20}, {name: 'Throwing Knives', weight: 20}],
-  [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|dusters|aid/)?.length)],
-  [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|dusters|aid/)?.length)]
+  [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|knive|dusters|aid/)?.length)],
+  [...TOOLS_CONFIG.filter(item => !item.name.toLowerCase().match(/knife|knive|dusters|aid/)?.length)]
 ]

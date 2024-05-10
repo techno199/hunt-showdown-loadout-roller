@@ -13,7 +13,6 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
   const {weapon} = {...weaponSlot} as TWeaponSlot;
   const {ammoType} = {...weapon} as TWeapon;
   const weaponConfigItem = WEAPONS_CONFIG.find(ci => ci.name === weaponSlot?.weapon.name);
-  console.log(ammoType)
 
   return (
     <div className={'flex gap-2 h-[120px]'}>
@@ -21,7 +20,7 @@ const WeaponSlot = (props: {weaponSlot: TWeaponSlot | undefined}) => {
         return (
           <div key={i} className={'relative flex flex-col border-2 border-col-2/50 rounded p-2.5 grow bg-col-9  z-0'}>
             <div className={'flex items-center justify-between grow'}>
-              {weapon && (
+              {weaponConfigItem.src && (
                 <Image
                   alt={''}
                   src={weaponConfigItem.src}

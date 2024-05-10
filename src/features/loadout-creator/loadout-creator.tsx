@@ -7,6 +7,7 @@ import HuntersList from "@/features/loadout-creator/hunters-list/hunters-list";
 import HunterLoadoutDetails from "@/features/loadout-creator/hunter-loadout-details/hunter-loadout-details";
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import LoadoutCreatorCacheValidation from "@/features/loadout-creator/loadout-creator-cache-validation";
+import {DEFAULT_LOADOUT_PRESET} from "@/loadout-presets/default.loadout-preset";
 
 export type LoadoutCreatorProps = {}
 
@@ -16,10 +17,7 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
     huntersLoadouts: [] as HunterLoadout[],
     selectedLoadout: null as unknown as HunterLoadout
   });
-
   const {huntersLoadouts, selectedLoadout, loadoutsInitialized} = state;
-  const firstWeaponSlot = selectedLoadout?.weaponSlots?.[0];
-  const secondWeaponSlot = selectedLoadout?.weaponSlots?.[1];
 
   useEffect(() => {
     const huntersLoadouts = JSON.parse(localStorage.getItem('loadouts') as string) || [];
@@ -34,7 +32,7 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   }, [huntersLoadouts, loadoutsInitialized])
 
   const handleGenerateLoadout = () => {
-    const newLoadout = new HunterLoadout();
+    const newLoadout = new HunterLoadout(DEFAULT_LOADOUT_PRESET);
 
     setState({
       ...state,

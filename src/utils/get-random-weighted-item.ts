@@ -15,8 +15,8 @@ export const getRandomWeightedItem = (items:  any[]) => {
   const randomWeight = getRandomInt(0, weightDistribution.at(-1), false);
   const randomItemIndex = weightDistribution.findIndex(weightThreshold => weightThreshold > randomWeight);
   const randomItem = items[randomItemIndex];
-  console.log(weightDistribution, randomWeight, randomItem);
-  if (!randomItem) debugger
+
+  if (!items?.includes(randomItem)) debugger;
 
   return randomItem;
 }

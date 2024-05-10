@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import '../fonts/fonts.css';
 import Head from "next/head";
+import {AppOptionsProvider} from "@/features/app-options/app-options.context";
 
 export const metadata: Metadata = {
   title: "Create Next App",

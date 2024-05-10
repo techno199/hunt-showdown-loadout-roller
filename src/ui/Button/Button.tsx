@@ -47,7 +47,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     <button
-      className={clsx(className, 'relative duration-200 select-none', {
+      className={clsx(className, 'relative duration-200 select-none outline-none', {
         // Stroke
         ['font-gt-sectra-fine tracking-[.6em] text-[1.6em] uppercase z-10 text-col-2 duration-200 after:content-[""] after:absolute after:left-1/2 after:top-1/2 after:-z-10 ' +
         'after:w-[12rem] after:h-[3rem] after:-translate-x-[166%] after:translate-y-1/2 after:rotate-[-12deg] after:opacity-0 after:bg-cover ' +

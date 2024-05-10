@@ -9,6 +9,8 @@ import {DEFAULT_TOOLS_PRESET, TOOLS_CONFIG} from "@/tools.config";
 import {CONSUMABLES_CONFIG} from "@/consumables.config";
 import {getRandomWeightedItem} from "@/utils/get-random-weighted-item";
 import {AmmoTypeId} from "@/entities/ammo-type";
+import {TLoadoutPreset} from "@/entities/loadout-preset";
+import {PRESETS_LIST} from "@/loadout-presets/presets-list.const";
 
 const HUNTER_BASE_MAX_SLOTS = 4;
 
@@ -18,6 +20,7 @@ export type THunterLoadout = {
   weaponSlots?: TWeaponSlot[];
   toolsSlots?: TToolSlot[];
   consumableSlots?: TConsumableSlot[];
+  associatedPresetId: number;
 }
 
 export class HunterLoadout implements THunterLoadout {
@@ -26,25 +29,32 @@ export class HunterLoadout implements THunterLoadout {
   weaponSlots: TWeaponSlot[] = [];
   toolsSlots: TToolSlot[] = [];
   consumableSlots: TConsumableSlot[] = [];
+  associatedPresetId: number;
 
-  constructor() {
+  constructor(preset: TLoadoutPreset) {
     this.id = crypto.randomUUID();
     this.hunterName = uniqueNamesGenerator({
       dictionaries: [names, names],
       length: 2,
       separator: ' '
     });
+    this.associatedPresetId = preset.id;
 
     // First weapon roll
     const firstWeaponSlot = this.__rollWeaponSlot({
+      weaponPool: preset.weaponSlotPools[0],
       availableSize: 4
     });
     const firstWeaponSlotSize = firstWeaponSlot.dualWielding ? 2 : firstWeaponSlot.weapon.slotSize;
 
     // Second weapon roll
     const secondWeaponSlot = this.__rollWeaponSlot({
+      weaponPool: preset.weaponSlotPools[1],
       availableSize: 4 - firstWeaponSlotSize,
-      dualWieldProhibited: firstWeaponSlot.dualWielding
+      // Allow the only dual wield slot
+      dualWieldProhibited: firstWeaponSlot.dualWielding,
+      // Exclude first weapon dup
+      excludedWeapons: [firstWeaponSlot.weapon]
     });
 
     this.weaponSlots[0] = firstWeaponSlot;
@@ -74,25 +84,32 @@ export class HunterLoadout implements THunterLoadout {
     }
   }
 
-  private __rollWeaponSlot = ({availableSize, dualWieldProhibited = false}) => {
+  private __rollWeaponSlot = ({
+    weaponPool,
+    availableSize,
+    dualWieldProhibited = false,
+    // Ability to exclude list of weapons regardless of preset
+    excludedWeapons = []
+  }) => {
     // Create weapon pool
-    const weaponPool = WEAPONS_CONFIG.filter(w => w.slotSize <= availableSize || (w.dualWieldingAvailable && 2 <= availableSize));
+    const filteredWeaponPool = weaponPool.filter(w =>
+      // Filter by size
+      (w.slotSize <= availableSize || (w.dualWieldingAvailable && 2 <= availableSize)) &&
+      // Filter by name
+      !excludedWeapons?.find(exw => exw.name === w.name)
+    );
     // Roll random weapon from pool
-    const weaponConfigItem: TWeaponConfigItem = getRandomWeightedItem(weaponPool);
+    const weaponConfigItem: TWeaponConfigItem = getRandomWeightedItem(filteredWeaponPool);
     // Roll random ammo from ammo pool(s)
     let ammoType = [];
-    if (weaponConfigItem.availableAmmoTypes) {
+    if (weaponConfigItem.availableAmmoTypes && Math.random() < 0.5) {
       for (const ammoPool of weaponConfigItem.availableAmmoTypes || []) {
         ammoType.push(getRandomWeightedItem(ammoPool));
       }
     } else {
       ammoType = weaponConfigItem.ammoType
     }
-    for (let ammoTypeItem of ammoType) {
-      if (!!weaponConfigItem.availableAmmoTypes && !weaponConfigItem.availableAmmoTypes?.flat().includes(ammoTypeItem)) {
-        debugger
-      }
-    }
+
 
     // Create weapon object
     const weapon: TWeapon = {

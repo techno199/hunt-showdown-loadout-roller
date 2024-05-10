@@ -80,7 +80,9 @@ const Page = (props: PageProps) => {
     const listener = (e) => {
       if (e.which === 70) {
         setState(p => {
-          p.backgroundAudio?.pause();
+          if (p.backgroundAudio) {
+            p.backgroundAudio.pause();
+          }
           clearTimeout(p.backgroundAudioTimeout);
           clearInterval(p.copyrightSliderInterval);
 
@@ -159,7 +161,8 @@ const Page = (props: PageProps) => {
           {currentCopyrightParagraphIndex < 8 && (
             <motion.span
               className={'absolute right-[100px] bottom-[40px] text-col-3'}
-              initial={{opacity: 1}}
+              initial={{opacity: 0}}
+              animate={{opacity: .5}}
               exit={{opacity: 0}}
               transition={{duration: 1}}
             >
