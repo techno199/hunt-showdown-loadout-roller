@@ -108,7 +108,7 @@ export const ROMERO_AMMO_POOL = [
 export const SPECTER_AMMO_POOL = [
   AmmoTypeId.SHELL_DRAGON_BREATH,
   AmmoTypeId.SHELL_FLECHETTE,
-  AmmoTypeId.SHELL_STARSHELL,
+  AmmoTypeId.SHELL_PENNYSHOT,
   AmmoTypeId.SHELL_SLUG
 ];
 
