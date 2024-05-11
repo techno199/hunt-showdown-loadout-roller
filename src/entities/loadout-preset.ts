@@ -5,8 +5,9 @@ import {Weightable} from "@/entities/weightable";
 
 export type TLoadoutPreset = {
   id: number;
-  weaponSlotPools: Weightable<TWeaponConfigItem>[][],
-  toolSlotPools: Weightable<typeof TOOLS_CONFIG[number]>[][],
-  consumableSlotPools: (Weightable<typeof CONSUMABLES_CONFIG[number]>)[][],
+  name: string;
+  weaponSlotPools: Weightable<{name: string}>[][],
+  toolSlotPools: Weightable<{name: string}>[][],
+  consumableSlotPools: (Weightable<{name: string}>)[][],
   chanceToSpawnSpecialAmmo: number
 }

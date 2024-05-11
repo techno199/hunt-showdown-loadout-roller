@@ -1,6 +1,8 @@
-import {createContext, useState, ContextType, useEffect} from "react";
+import {createContext, useEffect, useState} from "react";
 import {AppMultimediaCenter} from "@/features/app-multimedia-center/app-multimedia-center";
-import {any} from "prop-types";
+import {PRESETS_LIST} from "@/loadout-presets/presets-list.const";
+import {MusicPresetId} from "@/features/app-multimedia-center/entities/music-preset-id";
+import {APP_MUSIC_PRESET_OPTIONS} from "@/features/app-options/app-options.const";
 
 export const AppOptionsContext = createContext(null as any);
 
@@ -9,17 +11,30 @@ export const AppOptionsProvider = ({children}) => {
     initialized: false,
   });
   const [options, setOptions] = useState({
-    muted: false
+    muted: false,
+    loadoutPreset: 1,
+    musicPreset: MusicPresetId.MIXED
   });
 
   // Initialize all options from cache
   useEffect(() => {
     const cachedState = {};
-    for (let optionKey in Object.keys(options)) {
+    for (let optionKey in options) {
       const cachedValue = localStorage.getItem(`options.${optionKey}`);
 
       if (cachedValue) {
-        cachedState[optionKey] = cachedValue;
+        const parsed = JSON.parse(cachedValue);
+
+        switch (parsed) {
+          case 'true':
+            cachedState[optionKey] = true;
+            break;
+          case 'false':
+            cachedState[optionKey] = false;
+            break;
+          default:
+            cachedState[optionKey] = parsed;
+        }
       }
     }
 
@@ -33,11 +48,21 @@ export const AppOptionsProvider = ({children}) => {
     })
   }, []);
 
+  // Rewrite localstorage values
+  useEffect(() => {
+    for (let optionKey in options) {
+      localStorage.setItem(`options.${optionKey}`, JSON.stringify(options[optionKey]));
+    }
+  }, [options]);
 
+  // Apply muted option
   useEffect(() => {
     AppMultimediaCenter.toggleMuted(options.muted);
-  }, [options.muted, state.initialized]);
+  }, [options.muted]);
 
+  useEffect(() => {
+    AppMultimediaCenter.setMusicPreset(options.musicPreset);
+  }, [options.musicPreset]);
 
   return (
     <AppOptionsContext.Provider value={{

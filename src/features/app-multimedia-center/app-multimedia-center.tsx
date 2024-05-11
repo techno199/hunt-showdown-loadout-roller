@@ -1,24 +1,26 @@
-import {MUSIC_PRESET_CONFIG, MusicPreset} from "@/features/app-multimedia-center/entities/music-preset";
+import {MUSIC_PRESET_CONFIG, MusicPresetId} from "@/features/app-multimedia-center/entities/music-preset-id";
 import {getRandomInt} from "@/utils/get-random-int";
 import App from "next/app";
 
 const DEFAULT_LOOP_VOLUME = 0.05;
 
 export class AppMultimediaCenter {
-  static preset = MusicPreset.MIXED;
+  static preset = MusicPresetId.MIXED;
   static currentLoopTracks = [] as string[];
   static currentLoopTrack = null as unknown as HTMLAudioElement;
   static currentStreamSfx = null as unknown as HTMLAudioElement;
   static loopVolume = DEFAULT_LOOP_VOLUME;
   static soundMuted = false;
 
-  static setMusicPreset = (preset: MusicPreset) => {
+  static setMusicPreset = (preset: MusicPresetId) => {
+    AppMultimediaCenter.stopCurrentLoop();
     AppMultimediaCenter.preset = preset;
     AppMultimediaCenter.startPresetLoop();
   }
 
   static startPresetLoop = () => {
-    const musicConfig = MUSIC_PRESET_CONFIG.find(c => c.preset === AppMultimediaCenter.preset);
+    const musicConfig = MUSIC_PRESET_CONFIG.find(c => c.id === AppMultimediaCenter.preset);
+    if (!musicConfig) debugger;
     AppMultimediaCenter.currentLoopTracks = [...musicConfig!.soundtrackSrc];
 
     const playLoopRecursive = () => {
@@ -53,8 +55,10 @@ export class AppMultimediaCenter {
   }
 
   static stopCurrentLoop = () => {
-    AppMultimediaCenter.currentLoopTrack?.pause();
-    AppMultimediaCenter.currentLoopTrack = null!;
+    if (AppMultimediaCenter.currentLoopTrack) {
+      AppMultimediaCenter.currentLoopTrack.pause();
+      AppMultimediaCenter.currentLoopTrack = null!;
+    }
   }
 
   static playStreamSfx = (sfx: HTMLAudioElement) => {

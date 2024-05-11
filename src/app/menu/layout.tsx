@@ -37,7 +37,9 @@ const MenuLayout = (props: any) => {
                 Loadout creator
               </Button>
             </Link>
-            <Button variant={'stroke'} selected={pathname === '/menu/options'} className={'!text-base w-full'} disabled>Options</Button>
+            <Link href={'/menu/options'}>
+              <Button variant={'stroke'} selected={pathname === '/menu/options'} className={'!text-base w-full'}>Options</Button>
+            </Link>
             <Button variant={'stroke'} className={'!text-base'} onClick={handleExit}>Exit</Button>
           </div>
 

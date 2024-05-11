@@ -1,24 +1,23 @@
-import React, {HTMLAttributes} from 'react';
-import {Option} from "@mui/base";
-import {Select as MuiSelect, SelectProps as MuiSelectProps} from "@mui/material";
-import {MenuItem} from "@mui/material";
+import React from 'react';
+import {MenuItem, Select as MuiSelect, SelectProps as MuiSelectProps} from "@mui/material";
 
-export type SelectProps = SelectProps & {
+export type SelectProps = MuiSelectProps & {
   value: any;
   options: any[];
   labelField?: string;
 }
 
 const Select = (props: SelectProps) => {
-  const { options, labelField = 'label', ...rest } = props;
+  const {options, labelField = 'label', ...rest} = props;
 
   return (
     <MuiSelect
+      className={'text-col-2'}
       renderValue={(v) => v?.[labelField]}
       {...rest}
     >
       {options?.map(option => (
-        <MenuItem key={option.labelField} valute={option}>{option[labelField]}</MenuItem>
+        <MenuItem key={option[labelField]} value={option}>{option[labelField]}</MenuItem>
       ))}
     </MuiSelect>
   );

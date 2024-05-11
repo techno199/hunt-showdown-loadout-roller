@@ -520,7 +520,7 @@ export const WEAPONS_CONFIG: TWeaponConfigItem[] = [
     slotSize: 3,
     ammoType: [AmmoTypeId.MEDIUM],
     src: '/crytek-assets/weapons_assets/weapon_vetterlycyclone.png',
-    availableAmmoTypes: VETTERLY_AMMO_POOL
+    availableAmmoTypes: [VETTERLY_AMMO_POOL]
   },
   {
     name: 'Vetterly 71 Deadeye',

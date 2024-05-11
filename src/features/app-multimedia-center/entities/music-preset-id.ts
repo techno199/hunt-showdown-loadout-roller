@@ -1,4 +1,4 @@
-export enum MusicPreset {
+export enum MusicPresetId {
   MIXED,
   VOCAL,
   INSTRUMENTAL
@@ -23,15 +23,15 @@ const vocalSrc = [
 
 export const MUSIC_PRESET_CONFIG = [
   {
-    preset: MusicPreset.INSTRUMENTAL,
+    id: MusicPresetId.INSTRUMENTAL,
     soundtrackSrc: instrumentalSrc
   },
   {
-    preset: MusicPreset.VOCAL,
+    id: MusicPresetId.VOCAL,
     soundtrackSrc: vocalSrc
   },
   {
-    preset: MusicPreset.MIXED,
+    id: MusicPresetId.MIXED,
     soundtrackSrc: Array.from(new Set([...instrumentalSrc, ...vocalSrc]))
   }
 ]

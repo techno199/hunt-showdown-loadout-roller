@@ -5,7 +5,7 @@ import {names, uniqueNamesGenerator} from "unique-names-generator";
 import {TWeaponConfigItem, WEAPONS_CONFIG} from "@/weapons.config";
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import {getRandomInt} from "@/utils/get-random-int";
-import {DEFAULT_TOOLS_PRESET, TOOLS_CONFIG} from "@/tools.config";
+import {TOOLS_CONFIG} from "@/tools.config";
 import {CONSUMABLES_CONFIG} from "@/consumables.config";
 import {getRandomWeightedItem} from "@/utils/get-random-weighted-item";
 import {AmmoTypeId} from "@/entities/ammo-type";
@@ -46,16 +46,16 @@ export class HunterLoadout implements THunterLoadout {
       availableSize: 4,
       chanceToSpawnSpecialAmmo: preset.chanceToSpawnSpecialAmmo
     });
-    const firstWeaponSlotSize = firstWeaponSlot.dualWielding ? 2 : firstWeaponSlot.weapon.slotSize;
+    const firstWeaponSlotSize = firstWeaponSlot?.dualWielding ? 2 : firstWeaponSlot?.weapon?.slotSize || 0;
 
     // Second weapon roll
     const secondWeaponSlot = this.__rollWeaponSlot({
       weaponPool: preset.weaponSlotPools[1],
       availableSize: 4 - firstWeaponSlotSize,
       // Allow the only dual wield slot
-      dualWieldProhibited: firstWeaponSlot.dualWielding,
+      dualWieldProhibited: firstWeaponSlot?.dualWielding,
       // Exclude first weapon dup
-      excludedWeapons: [firstWeaponSlot.weapon],
+      excludedWeapons: firstWeaponSlot ? [firstWeaponSlot.weapon] : [],
       chanceToSpawnSpecialAmmo: preset.chanceToSpawnSpecialAmmo
     });
 
@@ -63,26 +63,31 @@ export class HunterLoadout implements THunterLoadout {
     this.weaponSlots[1] = secondWeaponSlot;
 
     // Tools roll
-    let toolsPool = [...TOOLS_CONFIG];
     const toolsCount = getRandomInt(3, 4);
     for (let i=0; i<toolsCount; i++) {
-      const presetItems = DEFAULT_TOOLS_PRESET[i];
-      const nextToolPresetItem: any = getRandomWeightedItem(presetItems || toolsPool as any);
-      const nextToolIndex = toolsPool.findIndex(t => t.name === nextToolPresetItem.name);
-      const nextTool = toolsPool[nextToolIndex];
+      const presetItems = preset.toolSlotPools[i];
 
-      toolsPool.splice(nextToolIndex, 1);
-      this.toolsSlots.push(nextTool);
+      if (presetItems?.length) {
+        // Filer dup items
+
+        const legalPresetItems = presetItems
+          .filter(item => !this.toolsSlots.find(ts => ts.name === item.name))
+        const nextToolItem = getRandomWeightedItem(legalPresetItems);
+        this.toolsSlots.push(TOOLS_CONFIG.find(ci => ci.name === nextToolItem.name));
+      }
     }
 
     // Consumables roll
-    let consumablesPool = [...CONSUMABLES_CONFIG];
-    const consumablesQuantity = getRandomInt(3, 4);
-    for (let i=0; i<consumablesQuantity; i++) {
-      const nextConsumableIndex = getRandomInt(0, consumablesPool.length - 1);
-      const nextTool = consumablesPool[nextConsumableIndex];
-      consumablesPool.splice(nextConsumableIndex, 1);
-      this.consumableSlots.push(nextTool);
+    const consumablesCount = getRandomInt(3, 4);
+    for (let i=0; i<consumablesCount; i++) {
+      const presetItems = preset.consumableSlotPools[i];
+
+      if (presetItems?.length) {
+        const legalPresetItems = presetItems
+          .filter(item => !this.toolsSlots.find(ts => ts.name === item.name))
+        const nextConsumableItem = getRandomWeightedItem(legalPresetItems);
+        this.consumableSlots.push(CONSUMABLES_CONFIG.find(ci => ci.name === nextConsumableItem.name));
+      }
     }
   }
 
@@ -101,6 +106,9 @@ export class HunterLoadout implements THunterLoadout {
       // Filter by name
       !excludedWeapons?.find(exw => exw.name === w.name)
     );
+    if (!filteredWeaponPool.length) {
+      return;
+    }
     // Roll random weapon from pool
     const weaponConfigItem: TWeaponConfigItem = getRandomWeightedItem(filteredWeaponPool);
     // Roll random ammo from ammo pool(s)

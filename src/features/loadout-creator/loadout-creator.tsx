@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {motion} from "framer-motion";
 import Button from "@/ui/Button/Button";
 import {HunterLoadout, THunterLoadout} from "@/entities/hunter-loadout";
@@ -8,6 +8,8 @@ import HunterLoadoutDetails from "@/features/loadout-creator/hunter-loadout-deta
 import {TWeaponSlot} from "@/entities/weapon-slot";
 import LoadoutCreatorCacheValidation from "@/features/loadout-creator/loadout-creator-cache-validation";
 import {DEFAULT_LOADOUT_PRESET} from "@/loadout-presets/default.loadout-preset";
+import {AppOptionsContext} from "@/features/app-options/app-options.context";
+import {PRESETS_LIST} from "@/loadout-presets/presets-list.const";
 
 export type LoadoutCreatorProps = {}
 
@@ -18,6 +20,8 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
     selectedLoadout: null as unknown as HunterLoadout
   });
   const {huntersLoadouts, selectedLoadout, loadoutsInitialized} = state;
+
+  const {options} = useContext(AppOptionsContext);
 
   useEffect(() => {
     const huntersLoadouts = JSON.parse(localStorage.getItem('loadouts') as string) || [];
@@ -32,7 +36,7 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   }, [huntersLoadouts, loadoutsInitialized])
 
   const handleGenerateLoadout = () => {
-    const newLoadout = new HunterLoadout(DEFAULT_LOADOUT_PRESET);
+    const newLoadout = new HunterLoadout(PRESETS_LIST.find(p => p.id === options.loadoutPreset));
 
     setState({
       ...state,
@@ -59,24 +63,22 @@ const LoadoutCreator = (props: LoadoutCreatorProps) => {
   }
 
   return (
-    <LoadoutCreatorCacheValidation>
-      <div className={'grid grid-cols-2 gap-8'}>
-        {/* Список хантеров */}
-        <HuntersList
-          hunterLoadouts={huntersLoadouts}
-          selectedLoadout={selectedLoadout}
-          onLoadoutClick={handleLoadoutClick}
-          onDismissAll={handleDismissAll}
-          onGenerateClick={handleGenerateLoadout}
-        />
+    <div className={'grid grid-cols-2 gap-8'}>
+      {/* Список хантеров */}
+      <HuntersList
+        hunterLoadouts={huntersLoadouts}
+        selectedLoadout={selectedLoadout}
+        onLoadoutClick={handleLoadoutClick}
+        onDismissAll={handleDismissAll}
+        onGenerateClick={handleGenerateLoadout}
+      />
 
-        {/* Лоадаут выбранного хантера */}
-       <HunterLoadoutDetails
-         selectedLoadout={selectedLoadout}
-         onDismiss={() => handleDismiss()}
-       />
-      </div>
-    </LoadoutCreatorCacheValidation>
+      {/* Лоадаут выбранного хантера */}
+     <HunterLoadoutDetails
+       selectedLoadout={selectedLoadout}
+       onDismiss={() => handleDismiss()}
+     />
+    </div>
   );
 };
 

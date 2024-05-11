@@ -37,7 +37,7 @@ const HuntersList = (props: HuntersListProps) => {
               onClick={onLoadoutClick(loadout)}
             >
               {loadout.hunterName}
-              {loadout.weaponSlots!?.find((s: TWeaponSlot) => s.dualWielding) && (
+              {loadout.weaponSlots!?.find((s: TWeaponSlot) => s?.dualWielding) && (
                 <Image alt={''} src={DualWield} className={'h-[26px] w-auto'} />
               )}
             </Button>

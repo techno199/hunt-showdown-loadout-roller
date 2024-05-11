@@ -3,6 +3,8 @@ import {getRandomInt} from "@/utils/get-random-int";
 const DEFAULT_ITEM_WEIGHT = 1;
 
 export const getRandomWeightedItem = (items:  any[]) => {
+  if (!Array.isArray(items)) return;
+
   const weightDistribution = [];
 
   for (let i=0; i<items.length; i++) {
@@ -15,8 +17,6 @@ export const getRandomWeightedItem = (items:  any[]) => {
   const randomWeight = getRandomInt(0, weightDistribution.at(-1), false);
   const randomItemIndex = weightDistribution.findIndex(weightThreshold => weightThreshold > randomWeight);
   const randomItem = items[randomItemIndex];
-
-  if (!items?.includes(randomItem)) debugger;
 
   return randomItem;
 }
