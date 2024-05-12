@@ -3,3 +3,48 @@
   font-weight: 400;
   src: url("GT Sectra Fine Regular.ttf") format('truetype');
 }
+@font-face {
+  font-family: 'Unfair Style1Clean';
+  font-weight: 400;
+  src: url("Unfair Style1Clean.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style1Rough';
+  font-weight: 400;
+  src: url("Unfair Style1Rough.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style1Shadow';
+  font-weight: 400;
+  src: url("Unfair Style1Shadow.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style2Clean';
+  font-weight: 400;
+  src: url("Unfair Style2Clean.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style2Rough';
+  font-weight: 400;
+  src: url("Unfair Style2Rough.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style2Shadow';
+  font-weight: 400;
+  src: url("Unfair Style2Shadow.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style3Clean';
+  font-weight: 400;
+  src: url("Unfair Style3Clean.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style3Rough';
+  font-weight: 400;
+  src: url("Unfair Style3Rough.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Unfair Style3Shadow';
+  font-weight: 400;
+  src: url("Unfair Style3Shadow.ttf") format('truetype');
+}

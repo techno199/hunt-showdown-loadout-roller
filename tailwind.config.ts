@@ -4,11 +4,14 @@ const config: Config = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  important: '#__next',
   theme: {
     extend: {
       fontFamily: {
         'gt-sectra-fine': ['GT Sectra Fine'],
-        'crimson-text': ['Crimson Text']
+        'crimson-text': ['Crimson Text'],
+        'unfair-style-1-clean': ['Unfair Style1Clean'],
+        'unfair-style-1-rough': ['Unfair Style1Rough']
       },
       colors: {
         'col-1': 'rgb(65 74 75)',
