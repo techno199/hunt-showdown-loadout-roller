@@ -6,6 +6,7 @@ import {MusicPresetId} from "@/features/app-multimedia-center/entities/music-pre
 import {AppOptionsContext} from "@/features/app-options/app-options.context";
 import {PRESETS_LIST} from "@/loadout-presets/presets-list.const";
 import {APP_MUSIC_PRESET_OPTIONS} from "@/features/app-options/app-options.const";
+import Slider from "@/ui/Slider/Slider";
 
 export type PageProps = {}
 
@@ -58,6 +59,12 @@ const Page = (props: PageProps) => {
               onChange={handleIdChange('musicPreset')}
               onMouseEnter={handleSetHintText('Select music list')}
               onMouseLeave={handleSetHintText('')}
+            />
+
+            <Slider
+              label={'Music volume'}
+              value={+(options.musicVolume * 100).toFixed(0)}
+              onChange={(e, v: number) => setOptions({...options, musicVolume: (v/100)})}
             />
           </div>
         </div>

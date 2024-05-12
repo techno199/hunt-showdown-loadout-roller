@@ -2,7 +2,7 @@ import {MUSIC_PRESET_CONFIG, MusicPresetId} from "@/features/app-multimedia-cent
 import {getRandomInt} from "@/utils/get-random-int";
 import App from "next/app";
 
-const DEFAULT_LOOP_VOLUME = 0.05;
+export const DEFAULT_LOOP_VOLUME = 0.1;
 
 export class AppMultimediaCenter {
   static preset = MusicPresetId.MIXED;
@@ -89,5 +89,13 @@ export class AppMultimediaCenter {
         AppMultimediaCenter.currentLoopTrack.volume = DEFAULT_LOOP_VOLUME;
       }
     }
+  }
+
+  static setLoopVolume = (volume: number) => {
+    if (AppMultimediaCenter.currentLoopTrack) {
+      AppMultimediaCenter.currentLoopTrack.volume = volume;
+    }
+
+    AppMultimediaCenter.loopVolume = volume;
   }
 }

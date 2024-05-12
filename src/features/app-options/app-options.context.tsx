@@ -1,5 +1,5 @@
 import {createContext, useEffect, useState} from "react";
-import {AppMultimediaCenter} from "@/features/app-multimedia-center/app-multimedia-center";
+import {AppMultimediaCenter, DEFAULT_LOOP_VOLUME} from "@/features/app-multimedia-center/app-multimedia-center";
 import {PRESETS_LIST} from "@/loadout-presets/presets-list.const";
 import {MusicPresetId} from "@/features/app-multimedia-center/entities/music-preset-id";
 import {APP_MUSIC_PRESET_OPTIONS} from "@/features/app-options/app-options.const";
@@ -13,7 +13,8 @@ export const AppOptionsProvider = ({children}) => {
   const [options, setOptions] = useState({
     muted: false,
     loadoutPreset: 1,
-    musicPreset: MusicPresetId.MIXED
+    musicPreset: MusicPresetId.MIXED,
+    musicVolume: DEFAULT_LOOP_VOLUME
   });
 
   // Initialize all options from cache
@@ -63,6 +64,10 @@ export const AppOptionsProvider = ({children}) => {
   useEffect(() => {
     AppMultimediaCenter.setMusicPreset(options.musicPreset);
   }, [options.musicPreset]);
+
+  useEffect(() => {
+    AppMultimediaCenter.setLoopVolume(options.musicVolume);
+  }, [options.musicVolume])
 
   return (
     <AppOptionsContext.Provider value={{
