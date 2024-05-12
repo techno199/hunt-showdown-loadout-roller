@@ -58,9 +58,7 @@ const Page = (props: PageProps) => {
               onChange={handleIdChange('musicPreset')}
               onMouseEnter={handleSetHintText('Select music list')}
               onMouseLeave={handleSetHintText('')}
-            >
-
-            </Select>
+            />
           </div>
         </div>
 

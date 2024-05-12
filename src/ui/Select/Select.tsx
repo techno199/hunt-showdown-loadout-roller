@@ -3,6 +3,7 @@ import {MenuItem, Select as MuiSelect, SelectProps as MuiSelectProps} from "@mui
 import ArrowLeft from '/public/icons/arrow_left.png'
 import clsx from "clsx";
 import Image from "next/image";
+import {AppMultimediaCenter} from "@/features/app-multimedia-center/app-multimedia-center";
 
 export type SelectProps = MuiSelectProps & {
   options: any[];
@@ -10,7 +11,7 @@ export type SelectProps = MuiSelectProps & {
 }
 
 const Select = (props: SelectProps) => {
-  const {options, labelField = 'label', label, className, onMouseEnter, onMouseLeave, onChange, ...rest} = props;
+  const {options, labelField = 'label', label, className, onMouseEnter, onMouseLeave, onChange, onOpen, onClose, ...rest} = props;
 
   const handleShiftChange = (shift: number) => () => {
     const selectedOptionIndex = options.findIndex(o => o === rest.value);
@@ -19,6 +20,20 @@ const Select = (props: SelectProps) => {
         value: options.at((selectedOptionIndex + shift) % options.length)
       }
     } as any, null);
+  }
+
+  const handleOpen = (e) => {
+    onOpen?.(e);
+    const audio = new Audio('/crytek-assets/sfx/hunt_sfx_click1.mp3');
+    audio.currentTime = 0.2;
+    AppMultimediaCenter.playStreamSfx(audio);
+  }
+
+  const handleClose = (e) => {
+    onClose?.(e);
+    const audio = new Audio('/crytek-assets/sfx/hunt_sfx_click1.mp3');
+    audio.currentTime = 0.2;
+    AppMultimediaCenter.playStreamSfx(audio);
   }
 
   return (
@@ -51,6 +66,15 @@ const Select = (props: SelectProps) => {
           className={'group text-col-2 [&_fieldset]:border-0 [&_.MuiSelect-select]:text-center font-bold'}
           renderValue={(v) => v?.[labelField]}
           IconComponent={IconComponent}
+          MenuProps={{
+            classes: {
+              paper: 'bg-black !transition-none',
+              list: 'flex flex-col gap-0.5 p-0.5 [&_li]:bg-col-1 [&_li:hover]:bg-col-2 [&_li]:text-col-2 [&_li:hover]:text-col-4 [&_li]:font-bold'
+            }
+          }}
+          onOpen={handleOpen}
+          onClose={handleClose}
+          onChange={onChange}
           {...rest}
         >
           {options?.map(option => (
