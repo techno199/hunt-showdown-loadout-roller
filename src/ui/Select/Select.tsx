@@ -20,17 +20,21 @@ const Select = (props: SelectProps) => {
         value: options.at((selectedOptionIndex + shift) % options.length)
       }
     } as any, null);
+
+    __playClickSfx();
   }
 
   const handleOpen = (e) => {
     onOpen?.(e);
-    const audio = new Audio('/crytek-assets/sfx/hunt_sfx_click1.mp3');
-    audio.currentTime = 0.2;
-    AppMultimediaCenter.playStreamSfx(audio);
+    __playClickSfx();
   }
 
   const handleClose = (e) => {
     onClose?.(e);
+    __playClickSfx();
+  }
+
+  const __playClickSfx = () => {
     const audio = new Audio('/crytek-assets/sfx/hunt_sfx_click1.mp3');
     audio.currentTime = 0.2;
     AppMultimediaCenter.playStreamSfx(audio);
